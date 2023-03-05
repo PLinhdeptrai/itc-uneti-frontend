@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .container-header{
+    background-color: black;
+} */
+.header-nav{
+    height: 90px !important;
+    background-color: #ccc;
+    
+}
+.header-logo{
+    height: 80px;
+    width: 300px;
+}
+.header-toggle{
+    background-color: #fff !important;
+}
+
+/* .header-collapse{
+    flex: inherit !important;
+} */
+
+.header-selection{
+    color: #000 !important;
+    font-size: 22px !important;
+    margin: 0 16px;
+}
+
+.header-button{
+    margin-left: 50px;
+}
+
