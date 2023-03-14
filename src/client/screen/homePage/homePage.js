@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
-import * as apis from '../../../apis/index.api'
-import { Button } from 'reactstrap';
 import './homePage.css'
 import Header from "../../../components/header";
 import Slider from "../../../components/slider";
+import News from "../../../components/News/News";
+import Cour from '../../../components/Cour/Cour'
+import Contest from '../../../components/Contest/Contest'
+import Doccument from "../../../components/Doccument/Doccument";
+import Footer from "../../../components/Footer/Footer";
 const HomePage = () => {
 
     // useEffect(() => {
@@ -23,10 +26,15 @@ const HomePage = () => {
     // }, [])
     return (
         <div>
-            <Header></Header>
+            <Header />
             <div className="container-homepage">
-                <Slider></Slider>
+                <Slider />
+                <News />
+                <Cour />
+                <Contest />
+                <Doccument />
             </div>
+            <Footer />
             <Outlet/>
         </div>
     )

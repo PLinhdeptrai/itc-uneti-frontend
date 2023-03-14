@@ -1,12 +1,10 @@
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import "../asset/css/header.css";
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import ImageLogo from "../asset/image/logo.png";
-import path from "../utils/path/path";
-import { Routes, Route, Link } from "react-router-dom";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function BasicExample() {
@@ -19,7 +17,7 @@ function BasicExample() {
 
                 <Container className='container-header'>
                     <Navbar.Brand className='header-selection' href="#home">
-                        <img className='header-logo' src={ImageLogo}></img>
+                        <img className='header-logo' src={ImageLogo} alt='error-img'></img>
                     </Navbar.Brand>
                     <Navbar.Toggle className='header-toggle' aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse className='header-collapse' id="basic-navbar-nav">
