@@ -2,7 +2,7 @@ import React from "react";
 import { Login, Register, ForgotPassword, Score, HomePage, Public } from "./client/screen/indexscreen";
 import { Routes, Route } from "react-router-dom";
 import path from "./utils/path/path";
-import CourItem from "./components/Cour/CourItem";
+import CourItem from "./Layouts/LayoutCour/CourItem";
 function App() {
 
   return ( 
