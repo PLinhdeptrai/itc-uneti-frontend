@@ -8,8 +8,7 @@ import './courItem.css'
 // Import Image:
 import Cplusplus from '../../asset/image/CourseItem/c++.jpg'
 import Python from '../../asset/image/CourseItem/python.png'
-import Javascript from '../../asset/image/CourseItem/courjs.jpeg'
-
+import Javascript from '../../asset/image/CourseItem/courjs.png'
 import Hd1 from '../../asset/image/CourseItem/hd1.jpg'
 import Hd2 from '../../asset/image/CourseItem/hd2.jpg'
 import Hd3 from '../../asset/image/CourseItem/hd5.jpg'
@@ -18,7 +17,7 @@ const cardCour = [
   {
     id: 1,
     image: Cplusplus,
-    name: 'KHóa học C++'
+    name: 'Khóa học C++'
   },
   {
     id: 2,
@@ -40,7 +39,7 @@ const cardActive = [
   {
     id: 2,
     image: Hd2,
-    name: 'Lễ bế giảng và trao bằng tốt nghiệp khóa 12'
+    name: 'Lễ bế giảng và trao bằng tốt nghiệp'
   },
   {
     id: 3,
@@ -48,14 +47,15 @@ const cardActive = [
     name: 'Nhóm lập trình Website'
   }
 ]
+
 function CourItem() {
   return (
       <div>
         <Header />
         <div className='containerCour'>
               <div className='post-and-cour'>
-                  <Newpost item={cardCour} text='KHÓA HỌC LIÊN QUAN'/>
-                  <Newpost item={cardActive} text='BÀI VIẾT MỚI NHẤT'/>
+                  <Newpost item={cardCour} text='KHÓA HỌC LIÊN QUAN' circle={false}/>
+                  <Newpost item={cardActive} text='BÀI VIẾT MỚI NHẤT' circle={true}/>
               </div>
               <BodyCour />
         </div>

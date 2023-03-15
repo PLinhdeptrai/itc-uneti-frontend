@@ -15,16 +15,19 @@
 }
 .card-post{
     width: 100%;
-    height: 350px;
-    background: turquoise;
+    height: 380px;
+    background-color: #fff;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 .bodyCour{
     width: 70%;
     height: auto;
     background-color: #fff;
+    padding: 20px;
+    display: flex;
 }
 .post-and-cour{
     width: 25%;
@@ -35,5 +38,45 @@
 }
 .postItem{
     display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+.Title-post{
+    width: 100%;
+    height: 15%;
+    font-size: 20px;
+    font-weight: 600;
+    background: #00358D;
+    color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+.img-post{
+    width: 120px !important ;
+    height: 80px !important;
+    border-radius: 8px;
+}
+.name-post{
+    font-size: 16px;
+    color: #212529;
+    padding-left: 12px;
+}
 
+/* Body Cour: */
+.slideCour{
+    width: 50%;
+    height: 360px !important;
+}
+.infoCour{
+    width: 50%;
+    height: auto;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+.teacher{
+    display: flex;
 }
