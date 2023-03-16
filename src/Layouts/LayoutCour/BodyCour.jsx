@@ -4,20 +4,15 @@ import ImageCour from '../../asset/image/CourseItem/courjs.png'
 import { FaStar } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import './courItem.css'
-export default function BodyCour() {
-  // const demoItem = [
-  //   {
-  //     id: 1,
-  //     nameCour: 'Javascript',
-  //     rating: 5,
-  //     jobTeach: 'Cựu sinh viên',
-  //     nameTeach: 'Nguyễn Văn A',
-  //     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non',
-  //   }
-  // ]
+import '../../asset/css/GlobleStyle.css'
+
+function BodyCour({item, text}) {
+  const handleClick = () => {
+    alert(`Chúc mừng bạn đăng kí thành công khoá học ${text}`)
+  }
   return (
     <div className='bodyCour'>
-      <Carousel className='slideCour' interval={2000}>
+      <Carousel className='slideCour' interval={1500}>
       <Carousel.Item>
         <img
             className="d-block w-100"
@@ -41,24 +36,40 @@ export default function BodyCour() {
     </Carousel.Item>
       </Carousel>
       <div className='infoCour'>
-          <h2>Javascript</h2>
-          <div>
-              <FaStar color="#ffc107"/>
-              <FaStar color="#ffc107"/>
-              <FaStar color="#ffc107"/>
-              <FaStar color="#ffc107"/>
-              <FaStar color="#ffc107"/>
-          </div>
-          <Button className='btn-singin' variant="warning">Đăng kí ngay</Button>{' '}
-          <h4>Người hướng dẫn</h4>
-          <div className='teacher'>
-              <p>Cựu sinh viên: </p>
-              <p> Nguyễn Văn A</p>
-          </div>
-          <h4>Nội dung khóa học</h4>
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span>
-
+          {item.map((item) => (
+            <div key={item.id} className='bodyItem'>
+              <h1>{item.nameCour}</h1>
+              <div className='rating'>
+                <FaStar color="#ffc107" size='24'/>
+                <FaStar color="#ffc107" size='24'/>
+                <FaStar color="#ffc107" size='24'/>
+                <FaStar color="#ffc107" size='24'/>
+                <FaStar color="#ffc107" size='24'/>
+              </div>
+              <Button className='btn-singin' variant="warning" onClick={handleClick}>Đăng kí ngay</Button>{' '}
+              <div className='lineAfter'></div>
+              <h5 style={{textDecoration: 'underline', fontStyle: 'italic'}}>Người hướng dẫn</h5>
+              <div className='teacher'>
+                  <p className='jobtea'>{item.jobTeach}: </p>
+                  <p className='nametea'>{item.nameTeach}</p>
+              </div>
+              <h5 style={{textDecoration: 'underline', fontStyle: 'italic'}}>Nội dung khoá học</h5>
+              <span>{item.content}</span>
+            </div>
+          ))}
+      </div>
+      <div className='bonusCour'>
+        {item.map((item) => (
+            <div key={item.id}>
+              <h5  className='info' style={{textDecoration: 'underline', fontStyle: 'italic'}}>Thông tin bổ sung khoá học</h5>
+              <span>{item.bonus}</span>
+              <h5 className='info' style={{textDecoration: 'underline', fontStyle: 'italic'}}>Giới thiệu ngôn ngữ {item.nameCour}</h5>
+              <iframe width="100%" height="420" src="https://www.youtube.com/embed/1HakS7KsbCk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        ))}
+        
       </div>
     </div>
   )
 }
+export default BodyCour
