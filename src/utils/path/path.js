@@ -6,7 +6,8 @@ const path = {
     LOGIN: 'login',
     REGISTER: 'register',
     FORGOTPASSWORD: 'forgot',
-    SCORE: 'score'
+    SCORE: 'score',
+    COURSE: 'cour/*'
 }
 
 export default path

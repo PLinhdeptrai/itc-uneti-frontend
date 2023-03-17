@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Cour{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Title{
+    color: blue;
+    font-weight: 700;
+    padding-top: 30px;
+}
+.ListCourse{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 25px;
+}
+.img-top{
+    height: 50%;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+.nameCour{
+    color: crimson;
+    font-weight: 700;
+}
+.teacher{
+    display: flex;
+}
+.p1-teacher{
+    color: gold;
+    font-size:large;
+    font-weight: 700;
+}
+.p2-teacher{
+    padding-left: 15px;
+    font-size: large;
+    color: red;
+}
+.descrip{
+    font-size: 20px;
+    opacity: 0.9;
+}
+.body-card{
+    padding: 10px;
+}
