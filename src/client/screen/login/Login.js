@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
 import './Login.css';
 import '../../../asset/css/util.css';
 import { FaFacebook } from "react-icons/fa";
@@ -9,11 +9,11 @@ import { AiOutlineLock } from 'react-icons/ai';
 import { BsFillEyeSlashFill } from 'react-icons/bs';
 import { IoEyeSharp } from "react-icons/io5";
 import { useForm } from "react-hook-form";
-// import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import path from "../../../utils/path/path";
+import * as apis from '../../../apis/index.api'
+function Login() {
 
-const Login = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -35,18 +35,58 @@ const Login = () => {
     }
     const onSubmit = (data) => console.log(data);
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    // const history = useHistory();
-    // useEffect(() => {
-    //     if (localStorage.getItem('user-info')) {
-    //         history.push("/add")
-    //     }
-    // }, [])
+    const [userName, setUsername] = useState("");
+    const [passWord, setPassword] = useState("");
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (localStorage.getItem('acces')) {
+            navigate("/add")
+        }
+    }, [])
 
-    const loginApp = () => {
-        console.warn(username,password)
-        var item={username,password}
+    // async function loginApp() {
+    //     console.warn(username,password);
+    //     var item = {username,password};
+    //     var result = await fetch("")
+    // }
+    async function loginApp() {
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Basic Y2xpZW50X2lkOmNsaWVudF9zZWNyZXQ=");
+        myHeaders.append("Content-type", "application/json");
+        myHeaders.append("login-type", "jwt");
+
+        var raw = { userName, passWord }
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:8080/public/api/auth/login", requestOptions)
+            .then(response => {
+                console.log(response)
+                if (response.status == 200) {
+                    return response.json()
+                }
+                throw Error(response.status)
+
+            })
+
+            .then(result => {
+                console(result)
+                localStorage.setItem("accessToken", result.accessToken)
+                alert("Thanh cong")
+
+            })
+            .catch(error => {
+                if (error.status == 403) {
+                    console.log('error', error)
+                    alert("sai ")
+                }
+
+            });
     }
     return (
 
@@ -125,9 +165,9 @@ const Login = () => {
                         <div className="container-login100-form-btn">
                             <div className="wrap-login100-form-btn">
                                 <div className="login100-form-bgbtn"></div>
-                                <button 
-                                className="login100-form-btn"
-                                onClick={loginApp}
+                                <button
+                                    className="login100-form-btn"
+                                    onClick={loginApp}
                                 >
                                     Đăng nhập
                                 </button>
