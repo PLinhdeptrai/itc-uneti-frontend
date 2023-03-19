@@ -28,7 +28,6 @@
     background-color: #fff;
     padding: 20px;
     display: flex;
-    flex-wrap: wrap;
 }
 .post-and-cour{
     width: 25%;
@@ -73,30 +72,11 @@
 .infoCour{
     width: 50%;
     height: auto;
+    background-color: aquamarine;
     display: flex;
     flex-direction: column;
     padding: 15px;
 }
-.btn-singin{
-    margin: 20px 0;
-}
 .teacher{
     display: flex;
-}
-.jobtea{
-    font-size: 20px;
-    font-weight: bold;
-    color: #e7b72a;
-}
-.nametea{
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-    padding-left: 15px;
-}
-.bonusCour{
-    margin-top: 30px;
-}
-.info{
-    margin: 20px 0;
 }
