@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,16 +7,30 @@
 /* .container-header{
     background-color: black;
 } */
-.header-nav{
-    height: 90px !important;
-    background-color: #ccc;
+
+.header-top{
+    height: 40px;
+    background-color: #035aa6;
     
 }
-.header-logo{
+.header-top p{
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+    font-size: 18px;
+}
+.header-nav {
+    height: 90px !important;
+    background-color: #fff;
+
+}
+
+.header-logo {
     height: 80px;
     width: 300px;
 }
-.header-toggle{
+
+.header-toggle {
     background-color: #fff !important;
 }
 
@@ -24,13 +38,48 @@
     flex: inherit !important;
 } */
 
-.header-selection{
-    color: #000 !important;
+.container-header{
+    margin: 0 !important;
+}
+.header-selection {
+
     font-size: 22px !important;
     margin: 0 16px;
 }
 
-.header-button{
+.header-button {
     margin-left: 50px;
 }
 
+.button-header {
+    display: flex;
+}
+@media (min-width: 1200px){
+    .navbar-expand-xl{
+        justify-content: center !important;
+    }
+}
+
+/* @media screen and (max-width: 1200px) {
+    .
+  } */
+.login-button-link {
+    padding: 6px !important;
+    margin: 0 4px !important;
+}
+
+.login-button {
+    border: 1px solid #000 !important;
+    border-radius: 25px !important;
+    color: rgba(0, 0, 0, .55) !important;
+    padding: 6px 15px !important;
+    text-decoration: none !important;
+}
+
+.login-button:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+.login-icon {
+    margin-right: 4px !important;
+}

@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Contest{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Title{
+    color: blue;
+    font-weight: 700;
+    padding-top: 30px;
+}
+.main-contest{
+    width: 100%;
+    height: auto;
+    background-image: url(../../asset/image/Contest/background.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    
+}
+.main-contest::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    background: #000;
+    opacity: 0.6;
+    z-index: 3;
+}
+.ListContest{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 25px;
+}
+.img-top{
+    height: 50%;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+.nameContest{
+    color: crimson;
+    font-weight: 700;
+}
+.time{
+    display: flex;
+}
+.p1-time{
+    color: gold;
+    font-size:large;
+    font-weight: 700;
+}
+.p2-time{
+    padding-left: 15px;
+    font-size: large;
+    color: red;
+}
+.descrip{
+    font-size: 20px;
+    opacity: 0.9;
+}
+.body-card{
+    padding: 10px;
+}
