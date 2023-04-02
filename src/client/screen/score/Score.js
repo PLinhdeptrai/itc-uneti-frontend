@@ -6,8 +6,6 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { DataGrid } from "@mui/x-data-grid";
 
-
-
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
   { field: "idStudent", headerName: "ID", width: 100 },
@@ -17,7 +15,6 @@ const columns = [
   { field: "address", headerName: "Cơ Sở", width: 130 },
   { field: "classz", headerName: "Lớp", width: 130 },
   { field: "averageScore", headerName: "Điểm trung bình", width: 130 },
-  
 ];
 
 class Score extends React.Component {
@@ -34,7 +31,6 @@ class Score extends React.Component {
       listSocres: res && res.data && res.data.list ? res.data.list : [],
     });
   }
-
 
   render() {
     let { listSocres } = this.state;
