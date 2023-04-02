@@ -11,7 +11,8 @@ import { IoEyeSharp } from "react-icons/io5";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import path from "../../../utils/path/path";
-import * as apis from '../../../apis/index.api'
+import * as apis from '../../../apis/index.api';
+import axios from 'axios';
 function Login() {
 
 
@@ -33,60 +34,19 @@ function Login() {
             inputpass.setAttribute("type", "text");
         })
     }
-    const onSubmit = (data) => console.log(data);
 
     const [userName, setUsername] = useState("");
     const [passWord, setPassword] = useState("");
-    const navigate = useNavigate();
-    useEffect(() => {
-        if (localStorage.getItem('acces')) {
-            navigate("/add")
-        }
-    }, [])
-
-    // async function loginApp() {
-    //     console.warn(username,password);
-    //     var item = {username,password};
-    //     var result = await fetch("")
-    // }
-    async function loginApp() {
-        var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Basic Y2xpZW50X2lkOmNsaWVudF9zZWNyZXQ=");
-        myHeaders.append("Content-type", "application/json");
-        myHeaders.append("login-type", "jwt");
-
-        var raw = { userName, passWord }
-
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
-
-        fetch("http://localhost:8080/public/api/auth/login", requestOptions)
-            .then(response => {
-                console.log(response)
-                if (response.status == 200) {
-                    return response.json()
-                }
-                throw Error(response.status)
-
-            })
-
-            .then(result => {
-                console(result)
-                localStorage.setItem("accessToken", result.accessToken)
-                alert("Thanh cong")
-
-            })
-            .catch(error => {
-                if (error.status == 403) {
-                    console.log('error', error)
-                    alert("sai ")
-                }
-
-            });
+    async function loginApp ()  {
+        const response =axios.post('http://localhost:8080/public/api/auth/login', { userName, passWord })
+          .then(function (response) {
+            console.log(response.data);
+            alert('thanh cong')
+          })
+          .catch(function (error) {
+            console.log(error);
+            alert('loi roi')
+          });
     }
     return (
 
@@ -94,7 +54,7 @@ function Login() {
             <div className="form-login wrap-login100 wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54" >
                 <div className="login100-form " >
 
-                    <form className="login-body validate-form" onSubmit={handleSubmit(onSubmit)}>
+                    <form className="login-body validate-form" onSubmit={handleSubmit()}>
                         <div className="login-title login100-form-title p-b-49">
                             <h3>Đăng nhập</h3>
                         </div>
@@ -136,7 +96,7 @@ function Login() {
                                     autoComplete="off"
                                     placeholder="Nhập mật khẩu"
                                     name="password"
-                                    {...register("password", { required: true, minLength: 8 })}
+                                    {...register("password", { required: true, minLength: 4 })}
                                     onChange={(e) => setPassword(e.target.value)}
                                 ></input>
                                 <span className="focus-input100"></span>

@@ -2,7 +2,6 @@ import React from "react";
 import { Login, Register, ForgotPassword, Score, HomePage, Public } from "./client/screen/indexscreen";
 import { Routes, Route } from "react-router-dom";
 import path from "./utils/path/path";
-import LoginApi from './client/screen/login/LoginApi';
 import CourItem from "./Layouts/LayoutCour/CourItem";
 function App() {
 
@@ -17,7 +16,6 @@ function App() {
           <Route path={path.FORGOTPASSWORD} element={<ForgotPassword/>}/>
           <Route path={path.SCORE} element={<Score/>}/>
           <Route path={path.COURSE} element={<CourItem />}/>
-          {/* <Route path='./' element={<Score/>}/> */}
         </Route>
       </Routes>
     </div>

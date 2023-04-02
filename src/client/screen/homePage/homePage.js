@@ -10,20 +10,6 @@ import Doccument from "../../../components/Doccument/Doccument";
 import Footer from "../../../components/Footer/Footer";
 const HomePage = () => {
 
-    // useEffect(() => {
-    //     const fetchDataHome = async () => {
-    //         const response = await apis.getHome()
-    //         console.log(response)
-    //     }
-    //     fetchDataHome()
-    // }, [])
-    // useEffect(() => {
-    //     const fetchLogin = async () => {
-    //         const responseLogin = await apis.LoginApi()
-    //         console.log(responseLogin)
-    //     }
-    //     fetchLogin()
-    // }, [])
     return (
         <div>
             <Header />
