@@ -26,11 +26,13 @@ function Example() {
         accessorKey: "idStudent",
         header: "Mã sinh viên",
         enableSorting: false,
+        enableColumnFilter: false,
       },
       {
         accessorKey: "fullName",
         header: "Họ và tên",
         enableSorting: false,
+        enableColumnFilter: false,
       },
       {
         accessorKey: "khoas",
