@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
-import ImageLogo from "../asset/image/logo.png";
-import "../asset/css/slider.css";
+import ImageLogo from "../../asset/image/logo.png";
+import "../../asset/css/slider.css";
 function UncontrolledExample() {
     return (
         <Carousel className='slider'>

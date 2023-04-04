@@ -1,13 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import './homePage.css'
-import Header from "../../../components/header";
-import Slider from "../../../components/slider";
-import News from "../../../components/News/News";
-import Cour from '../../../components/Cour/Cour'
-import Contest from '../../../components/Contest/Contest'
-import Doccument from "../../../components/Doccument/Doccument";
-import Footer from "../../../components/Footer/Footer";
+import { Header, Slider, News, Cour, Contest, Doccument, Footer } from "../../../components/index.component";
 
 
 const HomePage = () => {

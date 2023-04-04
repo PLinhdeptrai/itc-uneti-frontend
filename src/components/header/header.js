@@ -2,12 +2,12 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import "../asset/css/header.css";
+import "../../asset/css/header.css";
 import Button from 'react-bootstrap/Button';
-import ImageLogo from "../asset/image/logo.png";
+import ImageLogo from "../../asset/image/logo.png";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-function BasicExample() {
+function HomePage() {
     return (
         <div>
             <div className='header-top'>
@@ -52,4 +52,4 @@ function BasicExample() {
     );
 }
 
-export default BasicExample;
+export default HomePage;

@@ -2,8 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import MaterialReactTable from "material-react-table";
 import axios from "axios";
 import "./Score.css";
-import Header from "../../../components/header";
-import Footer from "../../../components/Footer/Footer";
+import { Header, Footer } from "../../../components/index.component";
 //nested data is ok, see accessorKeys in ColumnDef below
 
 function Example() {
@@ -60,15 +59,18 @@ function Example() {
   return (
     <div className="container-score">
       <Header></Header>
-      <MaterialReactTable
-        columns={columns}
-        data={data}
-        enableColumnActions={false}
-        enableFullScreenToggle={false}
-        initialState={{ showColumnFilters: true }}
-        enableHiding={false}
-        enableDensityToggle={false}
-      />
+      <div  className="container-scores">
+        <MaterialReactTable
+         
+          columns={columns}
+          data={data}
+          enableColumnActions={false}
+          enableFullScreenToggle={false}
+          initialState={{ showColumnFilters: true }}
+          enableHiding={false}
+          enableDensityToggle={false}
+        />
+      </div>
       <Footer></Footer>
     </div>
   );
