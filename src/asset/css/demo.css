@@ -12,7 +12,8 @@ footer{
     bottom: 0;
     background: linear-gradient(to right, #00093c, #2d0b00);
     color: #fff;
-    padding: 50px 0 0;
+    padding: 100px 0 30px;
+    border-top-left-radius: 115px;
     font-size: 13px;
     line-height: 20px;
     display: flex;
@@ -26,26 +27,20 @@ footer{
     align-items: flex-start;
     justify-content: space-between;
 }
-
-.col:first-child, .col:last-child{
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-}
-.col:nth-child(2){
-    margin-left: 70px;
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+    color: #fff;
 }
 .col:nth-child(2), .col:nth-child(3){
-    width: 15%;
-    display: flex;
-    flex-direction: column;
-    /* padding-left: 50px; */
+    flex-basis: 15%;
 }
 .logo{
     margin-bottom: 20px;
 }
 .param{
     margin-bottom: 50px;
+    padding-right: 50px;
     color: #fff;
 }
 .col h3{
@@ -60,6 +55,7 @@ footer{
 .email-id{
     width: fit-content;
     border-bottom: 1px solid #ccc;
+    margin: 20px 0;
 }
 .h3-right{
     margin-left: 30px;
@@ -121,7 +117,7 @@ hr{
     width: 90%;
     border: 0;
     border-bottom: 1px solid #ccc;
-    margin: 10px 0;
+    margin: 20px auto;
 }
 .copyright{
     text-align: center;

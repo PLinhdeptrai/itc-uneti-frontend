@@ -2,12 +2,12 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import "../asset/css/header.css";
+import "../../asset/css/header.css";
 import Button from 'react-bootstrap/Button';
-import ImageLogo from "../asset/image/Logocon.png";
+import ImageLogo from '../../asset/image/Logocon.png';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {FaHome, FaBookOpen, FaBell, FaRocket, FaChartBar, FaQuestionCircle} from 'react-icons/fa'
-function BasicExample() {
+function HomePage() {
     return (
         <div>
             <Navbar expand="xl" className='header-nav'>
@@ -48,4 +48,4 @@ function BasicExample() {
     );
 }
 
-export default BasicExample;
+export default HomePage;

@@ -22,7 +22,7 @@ function App() {
           <Route path={path.NEWS} element={<NewsFit />}/> 
           <Route path={path.DOCUMENT} element={<DocumentItem />}/>
                {/* <Route path='./' element={<Score/>}/> */}
-      </Routes>
+      </Routes> 
     </div>
   );
 }

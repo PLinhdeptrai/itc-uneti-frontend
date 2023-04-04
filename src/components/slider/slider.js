@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
-import ImageSlider from '../asset/image/slider.png';
-import "../asset/css/slider.css";
+import ImageSlider from '../../asset/image/slider.png';
+import "../../asset/css/slider.css";
 function UncontrolledExample() {
     return (
         <div className='wrapper'>

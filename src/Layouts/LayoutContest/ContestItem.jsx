@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../components/header'
+import Header from '../../components/header/header'
 import Footer from '../../components/Footer/Footer'
 import NavNews from './NavNews'
 import MainNews from './MainNews'
