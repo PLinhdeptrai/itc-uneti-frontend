@@ -1,55 +1,77 @@
-import React, { useState, useEffect } from "react";
-import * as apis from "../../../apis/index.api";
+import React, { useEffect, useMemo, useState } from "react";
+import MaterialReactTable from "material-react-table";
 import axios from "axios";
 import "./Score.css";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
-import { DataGrid } from "@mui/x-data-grid";
+import Header from "../../../components/header";
+import Footer from "../../../components/Footer/Footer";
+//nested data is ok, see accessorKeys in ColumnDef below
 
-const columns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "idStudent", headerName: "Mã sinh viên", width: 150 },
-  { field: "fullName", headerName: "Họ và tên", width: 150 },
-  { field: "khoas", headerName: "Khóa", width: 70 },
-  { field: "nganh", headerName: "Ngành", width: 200 },
-  { field: "address", headerName: "Cơ Sở", width: 130 },
-  { field: "classz", headerName: "Lớp", width: 130 },
-  { field: "averageScore", headerName: "Điểm trung bình", width: 130 },
-];
-
-class Score extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      listSocres: [],
-    };
-  }
-
-  async componentDidMount() {
-    let res = await axios.get("http://localhost:8080/score/findAll");
-    this.setState({
-      listSocres: res && res.data && res.data.list ? res.data.list : [],
+function Example() {
+  const [data, setData] = useState([]);
+  const getTableData = async () => {
+    await axios.get("http://localhost:8080/score/findAll").then((res) => {
+      setData(res.data.list);
     });
-  }
+  };
+  useEffect(() => {
+    getTableData();
+  }, []);
+  const columns = useMemo(
+    () => [
+      {
+        accessorKey: "id",
+        header: "ID",
+        enableColumnFilter: false,
+      },
+      {
+        accessorKey: "idStudent",
+        header: "Mã sinh viên",
+        enableSorting: false,
+      },
+      {
+        accessorKey: "fullName",
+        header: "Họ và tên",
+        enableSorting: false,
+      },
+      {
+        accessorKey: "khoas",
+        header: "Khóa",
+      },
+      {
+        accessorKey: "nganh",
+        header: "Ngành",
+      },
+      {
+        accessorKey: "address",
+        header: "Cơ sở",
+      },
+      {
+        accessorKey: "classz",
+        header: "Lớp",
+      },
+      {
+        accessorKey: "averageScore",
+        header: "Điểm trung bình",
+      },
+    ],
+    []
+  );
 
-  render() {
-    let { listSocres } = this.state;
-    return (
-      <div className="container score-user-container">
-        <div> TABLE</div>
-        <div className="table-score">
-          <DataGrid
-            rows={listSocres}
-            columns={columns}
-            pageSize={15}
-            rowsPerPageOptions={[30]}
-            FilterButton
-          />
-        </div>
-       
-      </div>
-    );
-  }
+  return (
+    <div className="container-score">
+      <Header></Header>
+      <MaterialReactTable
+        columns={columns}
+        data={data}
+        enableColumnActions={false}
+        enableFullScreenToggle={false}
+        initialState={{ showColumnFilters: true }}
+        enableHiding={false}
+        enableDensityToggle={false}
+      />
+      <Footer></Footer>
+    </div>
+  );
 }
 
-export default Score;
+export default Example;

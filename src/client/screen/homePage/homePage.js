@@ -8,14 +8,14 @@ import Cour from '../../../components/Cour/Cour'
 import Contest from '../../../components/Contest/Contest'
 import Doccument from "../../../components/Doccument/Doccument";
 import Footer from "../../../components/Footer/Footer";
-import Example from "../score/score2";
+
 
 const HomePage = () => {
 
     
     return (
         <div>
-            {/* <Header />
+            <Header />
             <div className="container-homepage">
                 <Slider />
                 <News />
@@ -24,8 +24,7 @@ const HomePage = () => {
                 <Doccument />
             </div>
             <Footer />
-            <Outlet/> */}
-            <Example></Example>
+            <Outlet/>
         </div>
     )
 }
