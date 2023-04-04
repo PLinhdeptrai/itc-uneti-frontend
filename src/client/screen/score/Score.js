@@ -4,20 +4,55 @@ import axios from "axios";
 import "./Score.css";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import { DataGrid } from "@mui/x-data-grid";
-
-
+import {
+  DataGrid,
+  GridToolbar,
+  GridToolbarFilterButton,
+} from "@mui/x-data-grid";
 
 const columns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "idStudent", headerName: "ID", width: 100 },
-  { field: "fullName", headerName: "Họ và tên", width: 130 },
-  { field: "khoas", headerName: "Khóa", width: 50 },
-  { field: "nganh", headerName: "Ngành", width: 130 },
-  { field: "address", headerName: "Cơ Sở", width: 130 },
-  { field: "classz", headerName: "Lớp", width: 130 },
-  { field: "averageScore", headerName: "Điểm trung bình", width: 130 },
-  
+  {
+    field: "id",
+    headerName: "ID",
+    width: 70,
+    sortable: false,
+    headerAlign: "center",
+  },
+  {
+    field: "idStudent",
+    headerName: "Mã sinh viên",
+    width: 150,
+    sortable: false,
+    headerAlign: "center",
+  },
+  {
+    field: "fullName",
+    headerName: "Họ và tên",
+    width: 200,
+    headerAlign: "center",
+  },
+  { field: "khoas", headerName: "Khóa", width: 100, headerAlign: "center" },
+  {
+    field: "nganh",
+    headerName: "Ngành",
+    width: 200,
+    sortable: false,
+    headerAlign: "center",
+  },
+  { field: "address", headerName: "Cơ Sở", width: 150, headerAlign: "center" },
+  {
+    field: "classz",
+    headerName: "Lớp",
+    width: 150,
+    sortable: false,
+    headerAlign: "center",
+  },
+  {
+    field: "averageScore",
+    headerName: "Điểm trung bình",
+    width: 150,
+    headerAlign: "center",
+  },
 ];
 
 class Score extends React.Component {
@@ -35,19 +70,21 @@ class Score extends React.Component {
     });
   }
 
-
   render() {
     let { listSocres } = this.state;
+
     return (
       <div className="container score-user-container">
         <div> TABLE</div>
+
         <div className="table-score">
           <DataGrid
+            components={{ Toolbar: GridToolbarFilterButton }}
             rows={listSocres}
             columns={columns}
             pageSize={15}
             rowsPerPageOptions={[30]}
-            FilterButton
+            disableColumnMenu
           />
         </div>
         {/* <div className="list-score">
