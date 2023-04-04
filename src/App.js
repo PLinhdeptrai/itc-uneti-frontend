@@ -3,12 +3,13 @@ import { Login, Register, ForgotPassword, Score, HomePage, Public } from "./clie
 import { Routes, Route } from "react-router-dom";
 import path from "./utils/path/path";
 import CourItem from "./Layouts/LayoutCour/CourItem";
+import Login2 from "./client/screen/login/Login2";
 function App() {
 
   return (
 
     <div>
-      <Routes>
+      {/* <Routes>
         <Route path={path.PUBLIC} element={<Public/>}>
           <Route path={path.HOME} element={<HomePage/>}/>
           <Route path={path.LOGIN} element={<Login/>}/>
@@ -17,7 +18,8 @@ function App() {
           <Route path={path.SCORE} element={<Score/>}/>
           <Route path={path.COURSE} element={<CourItem />}/>
         </Route>
-      </Routes>
+      </Routes> */}
+      <Login2></Login2>
     </div>
   );
 }
