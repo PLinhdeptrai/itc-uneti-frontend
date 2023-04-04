@@ -52,7 +52,7 @@ function Login() {
 
         <div className="container-login"  >
             <div className="form-login wrap-login100 wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54" >
-                <div className="login100-form " >
+                <div className="login100-form  validate-form" >
 
                     <form className="login-body validate-form" onSubmit={handleSubmit()}>
                         <div className="login-title login100-form-title p-b-49">
