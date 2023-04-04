@@ -55,20 +55,22 @@ function Cour() {
     return (
         <div className='Cour'>
             <div className='Title'>
-                <h1>CÁC KHÓA HỌC</h1>
+                <p>CÁC KHÓA HỌC</p>
             </div>
             <div className='ListCourse'>
             {Course.map((item) => (
                 <div key={item.id} className='card'>
                     <Link to={`/cour/${item.id}`} style={{textDecoration: 'none'}}>
-                        <img className='img-top' src={item.img} alt='error'></img> 
+                        <img className='img-top' src={item.img} alt='error' height={220} ></img> 
                         <div className='body-card' >
                         <h4 className='nameCour' >{item.nameCourse}</h4>
-                        <div className='teacher'>
-                            <p className='p1-teacher' >Nguoi day: </p>
-                            <p className='p2-teacher' >{item.teacher}</p>
-                        </div>
-                        <p className='descrip'>{item.description}</p>
+                        <div className='flex-teach'>
+                            <div className='teacher'>
+                                <p className='p1-teacher' >Người dạy: </p>
+                                <p className='p2-teacher' >{item.teacher}</p>
+                            </div>
+                            <Link className='btn-view' to={`/cour/${item.id}`} style={{textDecoration: 'none'}}>Xem thêm</Link>
+                            </div>
                         </div>
                     </Link>
                 </div>

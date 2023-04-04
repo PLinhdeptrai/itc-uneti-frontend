@@ -1,5 +1,5 @@
 import React from 'react'
-import Olympic from '../../asset/image/Contest/olympic.jpg'
+import Olympic from '../../asset/image/Contest/olympic.png'
 import Thang11 from '../../asset/image/Contest/thang11.jpg'
 import Tkdh from '../../asset/image/Contest/tkdh.jpg'
 // import Mua from '../../asset/image/Contest/mua.jpg'
@@ -30,6 +30,27 @@ const contest = [
         time: '12/10/2022',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
     },
+    {
+        id: 4,
+        img: Olympic,
+        nameContest: 'Cuộc thi Olympic tin học',
+        time: '12/10/2022',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+    },
+    {
+        id: 5,
+        img: Thang11,
+        nameContest: 'Cuộc thi Tháng 11 tri ân',
+        time: '12/10/2022',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+    },
+    {
+        id: 6,
+        img: Tkdh,
+        nameContest: 'Cuộc thi thiết kế đồ họa',
+        time: '12/10/2022',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+    },
     // {
     //     id: 4,
     //     img: Mua,
@@ -43,7 +64,7 @@ function Contest() {
     return (
         <div className='Contest'>
             <div className='Title'>
-                <h1>CÁC CUỘC THI</h1>
+                <p>CÁC CUỘC THI</p>
             </div>
             <div className='main-contest'>
                 <div className='ListContest'>
@@ -56,11 +77,13 @@ function Contest() {
                             <img className='img-top' src={item.img} alt='error'></img> 
                             <div className='body-card' >
                             <h4 className='nameContest' >{item.nameContest}</h4>
-                            <div className='time'>
-                                <p className='p1-time' >Thời gian: </p>
-                                <p className='p2-time' >{item.time}</p>
+                            <div className='flex-time'>
+                                <div className='time'>
+                                    <p className='p1-time' >Thời gian: </p>
+                                    <p className='p2-time' >{item.time}</p>
+                                </div>
+                                <Link className='btn-view' to={`/contest/${item.id}`} style={{textDecoration: 'none'}}>Xem thêm</Link>
                             </div>
-                            <p className='descrip'>{item.description}</p>
                             </div>
                         </Link>
                     </div>
