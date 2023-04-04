@@ -1,0 +1,111 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.news_container{
+    margin: 0 !important;
+    width: 100%;
+    height: auto;
+    background-image: url(../../asset/image/background.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+    padding: 50px 80px;
+}
+.container .col{
+    margin: 0 !important;
+}
+.container .row{
+    margin: 0 !important;
+    width: 100%; 
+}
+.main_Content .col{
+    margin: 0 !important;
+    background-color: #fff !important;
+}
+ .main_Content .row{
+    margin: 0 !important;
+    width: 100%; 
+    background-color: #fff !important;
+    border-radius: 20px 20px;
+}
+.nav_items{
+    width: 100%;
+    height: 150px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px 10px;
+}
+.main_Content container{
+    background-color: #fff;
+}
+.nav_items p{
+    color: #000;
+}
+.nav_image{
+    height: 90%;
+    width: 40%;
+    border-radius: 5px 5px;
+
+}
+.info_news{
+    padding-left: 5px;
+}
+.name_news{
+    font-size: 18px;
+    font-weight: bold;
+    color: black !important;
+}
+.carou-item img{
+    border-radius: 20px 20px;
+}
+.description_news{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    opacity: 0.8;
+    font-weight: bold;
+}
+/* Main Content: */
+.main_Content{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+.des_news{
+    margin-top: 30px;
+    font-size: 20px;
+}
+.Bonus_new{
+    border-left: 1px dashed #000;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.slider_news{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px dashed #000;
+}
+.slider_news p{
+    font-size: 12px;
+}
+.name_slider{
+    font-size: 16px !important;
+    color: #000;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.image_news{
+    height: 80%;
+    width: 30%;
+}
