@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import MaterialReactTable from "material-react-table";
 import { async } from "q";
 import axios from "axios";
+import { sort } from "semver";
 
 //nested data is ok, see accessorKeys in ColumnDef below
 
@@ -15,20 +16,23 @@ function Example() {
   useEffect(() => {
     getTableData();
   }, []);
-  console.log(data);
   const columns = useMemo(
     () => [
       {
         accessorKey: "id",
         header: "ID",
+        align: "center",
+        sorting:  false
       },
       {
         accessorKey: "idStudent",
         header: "Mã sinh viên",
+        
       },
       {
         accessorKey: "fullName",
         header: "Họ và tên",
+        align: "center"
       },
       {
         accessorKey: "khoas",
@@ -55,8 +59,19 @@ function Example() {
   );
 
   return (
-    <div className="container">
-      <MaterialReactTable columns={columns} data={data} />;
+    <div className="">
+      <MaterialReactTable
+        columns={columns}
+        data={data}
+        
+        // enableColumnActions={false}
+        // enablePagination={false}
+        // // enableFullScreenToggle={false}
+        // // initialState={{ showColumnFilters: true }}
+        // enableHiding={false}
+        // // enableDensityToggle={false}
+        
+      />
     </div>
   );
 }
