@@ -3,7 +3,7 @@ import React from 'react'
 import Image1 from '../../asset/image/News/image1.png'
 import Image2 from '../../asset/image/News/image2.png'
 import '../../asset/css/news.css'
-
+import {Link} from 'react-router-dom'
 const news = [
     {
         id:1,
@@ -22,16 +22,18 @@ const news = [
 ]
 function News() {
   return (
+    
     <div className='News'>
+        <p className='title'>TỔNG QUAN</p>
         {news.map((item) => (
-            <div key={item.id} className='itemNews'>
-                <img className='imageNews' src={item.thumbnail} alt='error'></img>
-                <div className='contentNews'>
-                    <h1 className='nameNews'>{item.name}</h1>
-                    <p className='titleNews'>{item.title}</p>
-                    <span className='desNews'>{item.description}</span>
-                </div>
-            </div>
+                <Link to={`/news/${item.id}`} key={item.id} className='itemNews'>
+                    <img className='imageNews' src={item.thumbnail} alt='error'></img>
+                    <div className='contentNews'>
+                        <h1 className='nameNews'>{item.name}</h1>
+                        <p className='titleNews'>{item.title}</p>
+                        <span className='desNews'>{item.description}</span>
+                    </div>
+                </Link>
         ))}
     </div>
   )

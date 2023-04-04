@@ -7,7 +7,10 @@ const path = {
     REGISTER: 'register',
     FORGOTPASSWORD: 'forgot',
     SCORE: 'score',
-    COURSE: 'cour/*'
+    COURSE: 'cour/*',
+    CONTEST: 'contest/*',
+    NEWS: 'news/*',
+    DOCUMENT: 'document/*',
 }
 
 export default path

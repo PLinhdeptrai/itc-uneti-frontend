@@ -6,34 +6,26 @@
 .Contest{
     width: 100%;
     height: auto;
-    background-color: #fff;
+    background-color: transparent;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.Title{
-    color: blue;
+.Title p{
+    color: #fff;
+    font-size: 80px;
     font-weight: 700;
-    padding-top: 30px;
+    margin-top: 70px;
 }
 .main-contest{
     width: 100%;
     height: auto;
-    background-image: url(../../asset/image/Contest/background.jfif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+    background-color: #fff;
+    border-radius: 30px 30px !important;
     
 }
-.main-contest::after{
-    position: absolute;
-    content: '';
-    width: 100%;
-    background: #000;
-    opacity: 0.6;
-    z-index: 3;
-}
+
 .ListContest{
     display: flex;
     justify-content: space-between;
@@ -41,13 +33,22 @@
     padding: 30px 25px;
 }
 .img-top{
-    height: 50%;
+    height: 70%;
     width: 100%;
-    border-radius: 5px 5px 0 0;
+    border-radius: 15px 15px 0 0;
 }
 .nameContest{
     color: crimson;
     font-weight: 700;
+}
+.flex-time{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-view{
+    font-size: 20px;
+    font-weight: 700;
+
 }
 .time{
     display: flex;

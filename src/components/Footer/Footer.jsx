@@ -1,15 +1,15 @@
 import React from 'react';
-import logo from '../../asset/image/Footer/logo.png'
+import logo from '../../asset/image/Logocon.png'
 import '../../asset/css/footer.css'
 import {Link} from 'react-router-dom'
-import {FaEnvelope, FaArrowRight, FaFacebookF, FaTwitter, FaWhatsapp, FaPinterest} from 'react-icons/fa'
+import {FaEnvelope, FaArrowRight, FaFacebookF, FaTwitter, FaTiktok, FaPinterest} from 'react-icons/fa'
 export default function Footer() {
   return (
       <footer>
         <div className='row'>
           <div className="col">
           <div className="logo">
-              <img  src={logo} alt="error" width={250} height={120}/>
+              <img  src={logo} alt="error" width={250} height={65}/>
             </div>
             <p className='param'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi illum ut, corrupti nesciunt, aliquid temporibus accusantium quod, facilis sequi doloribus totam quos. Corrupti adipisci dolores porro dolore similique velit eligendi.</p>
           </div>
@@ -48,7 +48,7 @@ export default function Footer() {
                   <FaTwitter size={25} />
                 </div>
                 <div className="fab">
-                  <FaWhatsapp size={25}/>
+                  <FaTiktok size={25}/>
                 </div>
                 <div className="fab">
                   <FaPinterest size={25}/>

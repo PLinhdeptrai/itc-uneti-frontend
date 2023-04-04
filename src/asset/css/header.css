@@ -26,25 +26,33 @@
 }
 
 .header-logo {
-    height: 80px;
-    width: 300px;
+    height: 60px;
+    width: 250px;
+    margin-right: 50px;
 }
 
 .header-toggle {
     background-color: #fff !important;
 }
 
-/* .header-collapse{
-    flex: inherit !important;
-} */
 
 .container-header{
     margin: 0 !important;
+    display: flex;
 }
 .header-selection {
-
     font-size: 22px !important;
     margin: 0 16px;
+}
+.header-selection p{
+    color: #4153cc;
+}
+.me-auto{
+    display: flex;
+    align-items: center;
+}
+.nav-icon{
+    padding-left: 12px;
 }
 
 .header-button {
@@ -53,10 +61,11 @@
 
 .button-header {
     display: flex;
+    margin-left: 70px;
 }
 @media (min-width: 1200px){
     .navbar-expand-xl{
-        justify-content: center !important;
+        justify-content: space-evenly !important;
     }
 }
 
