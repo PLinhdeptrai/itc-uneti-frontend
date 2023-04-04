@@ -8,10 +8,10 @@ import { DataGrid } from "@mui/x-data-grid";
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
-  { field: "idStudent", headerName: "ID", width: 100 },
-  { field: "fullName", headerName: "Họ và tên", width: 130 },
-  { field: "khoas", headerName: "Khóa", width: 50 },
-  { field: "nganh", headerName: "Ngành", width: 130 },
+  { field: "idStudent", headerName: "Mã sinh viên", width: 150 },
+  { field: "fullName", headerName: "Họ và tên", width: 150 },
+  { field: "khoas", headerName: "Khóa", width: 70 },
+  { field: "nganh", headerName: "Ngành", width: 200 },
   { field: "address", headerName: "Cơ Sở", width: 130 },
   { field: "classz", headerName: "Lớp", width: 130 },
   { field: "averageScore", headerName: "Điểm trung bình", width: 130 },
@@ -46,36 +46,7 @@ class Score extends React.Component {
             FilterButton
           />
         </div>
-        {/* <div className="list-score">
-          <table className="table-score">
-            <thead>
-              <tr>
-                <th>STT</th>
-                <th>Mã sinh viên</th>
-                <th>Họ và tên</th>
-                <th>Khóa</th>
-                <th>Ngành</th>
-                <th>Cơ sở</th>
-                <th>Lớp</th>
-                <th>Điểm</th>
-              </tr>
-            </thead>
-            <tbody>
-              {listSocres.map((item, index) => (
-                <tr>
-                  <td>{index + 1}</td>
-                  <td>{item.idStudent}</td>
-                  <td>{item.fullName}</td>
-                  <td>{item.khoas}</td>
-                  <td>{item.nganh}</td>
-                  <td>{item.address}</td>
-                  <td>{item.classz}</td>
-                  <td>{item.averageScore}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div> */}
+       
       </div>
     );
   }

@@ -38,9 +38,9 @@ function Login() {
     const [userName, setUsername] = useState("");
     const [passWord, setPassword] = useState("");
     async function loginApp ()  {
-        const response =axios.post('http://localhost:8080/public/api/auth/login', { userName, passWord })
-          .then(function (response) {
-            console.log(response.data);
+        const data =axios.post('http://localhost:8080/public/api/auth/login', { userName, passWord })
+          .then(function (data) {
+            console.log(data.data);
             alert('thanh cong')
           })
           .catch(function (error) {
