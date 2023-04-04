@@ -21,18 +21,17 @@ function Example() {
       {
         accessorKey: "id",
         header: "ID",
-        align: "center",
-        sorting:  false
+        showColumnFilters: false
       },
       {
         accessorKey: "idStudent",
         header: "Mã sinh viên",
-        
+        enableSorting: false
       },
       {
         accessorKey: "fullName",
-        header: "Họ và tên",
-        align: "center"
+        header: "Họ và tên", 
+        enableSorting: false
       },
       {
         accessorKey: "khoas",
@@ -44,7 +43,7 @@ function Example() {
       },
       {
         accessorKey: "address",
-        header: "Address",
+        header: "Cơ sở",
       },
       {
         accessorKey: "classz",
@@ -63,14 +62,11 @@ function Example() {
       <MaterialReactTable
         columns={columns}
         data={data}
-        
-        // enableColumnActions={false}
-        // enablePagination={false}
-        // // enableFullScreenToggle={false}
-        // // initialState={{ showColumnFilters: true }}
-        // enableHiding={false}
-        // // enableDensityToggle={false}
-        
+        enableColumnActions={false}
+        enableFullScreenToggle={false}
+        initialState={{ showColumnFilters: true }}
+        enableHiding={false}
+        enableDensityToggle={false}
       />
     </div>
   );
