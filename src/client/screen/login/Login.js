@@ -13,6 +13,9 @@ import { Link, useNavigate } from "react-router-dom";
 import path from "../../../utils/path/path";
 import * as apis from "../../../apis/index.api";
 import axios from "axios";
+
+
+
 function Login() {
   const {
     register,
@@ -36,14 +39,11 @@ function Login() {
     });
   };
 
-  const [userName, setUsername] = useState("");
-  const [passWord, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   async function loginApp() {
-    const data =  axios
-      .post("http://localhost:8080/api/auth/login", {
-        userName,
-        passWord,
-      })
+    const data = await axios
+      .post("http://localhost:8080/api/auth/login", { username, password })
       .then(function (data) {
         console.log(data.data);
         alert("thanh cong");

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Register.css";
 import "../../../asset/css/util.css";
-import axios from "../../../axios";
+import axios from "axios";
 import "@material-design-icons/font";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineLock } from "react-icons/ai";
@@ -23,15 +23,12 @@ function Register() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   async function RegisterApp() {
-    const res = axios
-      .post("http://localhost:8080/api/auth/register", {
-        username,
-        password,
-        email,
-      })
-      .then(function (res) {
-        console.log(res.data);
+    const data = await axios
+      .post("http://localhost:8080/api/auth/register", {username,password,email})
+      .then(function (data) {
+        console.log(data.data);
         alert("thanh cong");
       })
       .catch(function (error) {
@@ -126,7 +123,7 @@ function Register() {
                   className="input100 inputpass"
                   type="password"
                   autoComplete="off"
-                  name="username"
+                  name="password"
                   placeholder="Nhập mật khẩu"
                   onChange={(e) => setPassword(e.target.value)}
                   {...register("password", { required: true, minLength: 8 })}
