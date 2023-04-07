@@ -53,6 +53,7 @@ function Example() {
       {
         accessorKey: "averageScore",
         header: "Điểm trung bình",
+        enableColumnFilter: false,
       },
     ],
     []

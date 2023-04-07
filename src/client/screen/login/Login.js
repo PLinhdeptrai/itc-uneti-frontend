@@ -39,8 +39,8 @@ function Login() {
   const [userName, setUsername] = useState("");
   const [passWord, setPassword] = useState("");
   async function loginApp() {
-    const data = axios
-      .post("http://localhost:8080/public/api/auth/login", {
+    const data =  axios
+      .post("http://localhost:8080/api/auth/login", {
         userName,
         passWord,
       })
@@ -54,7 +54,7 @@ function Login() {
       });
   }
   return (
-    <div className="container-login">
+    <div className="container container-login">
       <div className="form-login wrap-login100 wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
         <div className="login100-form ">
           <form className="login-body validate-form" onSubmit={handleSubmit()}>
