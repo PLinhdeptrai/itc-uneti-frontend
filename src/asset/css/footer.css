@@ -134,6 +134,7 @@ hr{
     position: absolute;
     top: 35px;
     left: 0;
+    z-index: 3;
     overflow:  hidden;
 }
 .underline span{
@@ -144,6 +145,7 @@ hr{
     position: absolute;
     top: 0;
     left: 10px;
+    z-index: 5;
     animation: moving 2s linear infinite;
 }
 @keyframes moving{
