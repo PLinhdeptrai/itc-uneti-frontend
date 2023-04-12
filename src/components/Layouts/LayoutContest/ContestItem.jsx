@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../../components/header/header'
-import Footer from '../../components/Footer/Footer'
+import Header from '../../header/header'
+import Footer from '../../Footer/Footer'
 import NavNews from './NavNews'
 import MainNews from './MainNews'
 function ContestItem() {

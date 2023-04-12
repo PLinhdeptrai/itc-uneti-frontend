@@ -4,9 +4,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Carousel } from 'react-bootstrap';
 import { FaCircle } from 'react-icons/fa'
-import Olympic from '../../asset/image/Contest/olympic.png'
-import Thang11 from '../../asset/image/Contest/thang11.jpg'
-import Tkdh from '../../asset/image/Contest/tkdh.jpg'
+import Olympic from '../../../asset/image/Contest/olympic.png'
+import Thang11 from '../../../asset/image/Contest//thang11.jpg'
+import Tkdh from '../../../asset/image/Contest/tkdh.jpg'
 import './newsItem.css'
 const NewsInfo = [
     {

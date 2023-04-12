@@ -14,8 +14,6 @@ import path from "../../../utils/path/path";
 import * as apis from "../../../apis/index.api";
 import axios from "axios";
 
-
-
 function Login() {
   const {
     register,
@@ -54,11 +52,11 @@ function Login() {
       });
   }
   return (
-    <div className="container container-login">
+    <div className="container-register">
       <div className="form-login wrap-login100 wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-        <div className="login100-form ">
+        <div className="login100-form validate-form">
           <form className="login-body validate-form" onSubmit={handleSubmit()}>
-            <div className="login-title login100-form-title p-b-49">
+            <div className="login-title login100-form-title p-b-30">
               <h3>Đăng nhập</h3>
             </div>
             <div
@@ -127,7 +125,7 @@ function Login() {
                 )}
               </div>
             )}
-            <div className="text-right p-t-8 p-b-31">
+            <div className="text-right  p-b-10">
               <Link to="/forgot" className="forgot-password">
                 Quên mật khẩu?
               </Link>
@@ -142,7 +140,7 @@ function Login() {
             </div>
           </form>
 
-          <div className="txt1 text-center  p-t-54 p-b-20">
+          <div className="txt1 text-center  p-t-30 p-b-20">
             <span>Hoặc đăng nhập bằng</span>
           </div>
           <div className="flex-c-m">
@@ -154,7 +152,7 @@ function Login() {
               <FaGoogle></FaGoogle>
             </a>
           </div>
-          <div className="flex-col-c p-t-155">
+          <div className="flex-col-c p-t-50">
             <span className="txt1 p-b-17">Chưa có tài khoản ?</span>
 
             <Link to="/register" className="txt2">

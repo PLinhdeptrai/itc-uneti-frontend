@@ -1,17 +1,17 @@
 import React from 'react'
-import Header from '../../components/header/header'
-import Footer from '../../components/Footer/Footer'
+import Header from '../../header/header'
+import Footer from '../../Footer/Footer'
 import Newpost from './NewPost'
 import BodyCour from './BodyCour'
 import './courItem.css'
 
 // Import Image:
-import Cplusplus from '../../asset/image/CourseItem/c++.jpg'
-import Python from '../../asset/image/CourseItem/python.png'
-import Javascript from '../../asset/image/CourseItem/courjs.png'
-import Hd1 from '../../asset/image/CourseItem/hd1.jpg'
-import Hd2 from '../../asset/image/CourseItem/hd2.jpg'
-import Hd3 from '../../asset/image/CourseItem/hd5.jpg'
+import Cplusplus from '../../../asset/image/CourseItem/c++.jpg'
+import Python from '../../../asset/image/CourseItem/python.png'
+import Javascript from '../../../asset/image/CourseItem/courjs.png'
+import Hd1 from '../../../asset/image/CourseItem/hd1.jpg'
+import Hd2 from '../../../asset/image/CourseItem/hd2.jpg'
+import Hd3 from '../../../asset/image/CourseItem/hd5.jpg'
 
 const cardCour = [
   {

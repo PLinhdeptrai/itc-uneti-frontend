@@ -239,6 +239,9 @@ iframe {
 /*------------------------------------------------------------------
   [ Form ]*/
 
+.login-body {
+  border-bottom: none !important;
+}
 .login100-form {
   width: 100%;
 }
@@ -302,10 +305,11 @@ iframe {
   padding: 0 7px 0 43px;
 }
 
-.icon-eye{
-    position: absolute;
-    bottom: 7px;
-    right: 0;
+.icon-eye {
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+  cursor: pointer;
 }
 /*---------------------------------------------*/
 .focus-input100 {

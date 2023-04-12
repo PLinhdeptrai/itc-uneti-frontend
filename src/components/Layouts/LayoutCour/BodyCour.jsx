@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
-import ImageCour from '../../asset/image/CourseItem/courjs.png'
+import ImageCour from '../../../asset/image/CourseItem/courjs.png'
 import { FaStar } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import './courItem.css'

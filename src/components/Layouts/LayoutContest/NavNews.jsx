@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Tkdh from '../../asset/image/Contest/tkdh.jpg'
+import Tkdh from '../../../asset/image/Contest/tkdh.jpg'
 import './newsItem.css'
 function NavNews() {
   return (

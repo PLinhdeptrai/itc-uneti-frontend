@@ -68,7 +68,14 @@
         justify-content: space-evenly !important;
     }
 }
+.header-user{
+    display: flex;
+    width: 160px;
+}
 
+.header-user .header-user-name{
+    margin-left: 4px;
+}
 /* @media screen and (max-width: 1200px) {
     .
   } */

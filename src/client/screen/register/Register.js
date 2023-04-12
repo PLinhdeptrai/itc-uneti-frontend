@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Register.css";
 import "../../../asset/css/util.css";
-import axios from "axios";
+import axios from "../../../axios";
 import "@material-design-icons/font";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineLock } from "react-icons/ai";
@@ -13,20 +13,21 @@ import { IoEyeSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 function Register() {
-  const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  async function RegisterApp() {
+  const onSubmit = async (formData)  => {
+    const newUser = {
+      username: formData.username,
+      password: formData.password,
+      email: formData.email,
+      roles: ["user"]
+    }
     const data = await axios
-      .post("http://localhost:8080/api/auth/register", {username,password,email})
+      .post("http://localhost:8080/api/auth/register", newUser)
       .then(function (data) {
         console.log(data.data);
         alert("thanh cong");
@@ -35,7 +36,8 @@ function Register() {
         console.log(error);
         alert("loi roi");
       });
-  }
+  } 
+ 
   const Eyes = () => {
     const inputpass = document.querySelector(".inputpass");
     const eyesOpen = document.querySelector(".eyes-open");
@@ -55,9 +57,9 @@ function Register() {
     <div className="container-register">
       <div className="form-login wrap-login100 wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
         <div className="login100-form validate-form">
-          <form className="login-body " onSubmit={handleSubmit()}>
-            <div className="login-title login100-form-title p-b-9">
-              <h3>ĐĂNG KÝ</h3>
+          <form className="login-body " onSubmit={handleSubmit(onSubmit)}>
+            <div className="login-title login100-form-title p-b-12">
+              <h3>Đăng Kí</h3>
             </div>
             <div
               className="login-input wrap-input100 validate-input m-t-23"
@@ -72,7 +74,6 @@ function Register() {
                   autoComplete="off"
                   name="name"
                   placeholder="Nhập họ và tên"
-                  onChange={(e) => setName(e.target.value)}
                   {...register("name", { required: true, minLength: 12 })}
                 ></input>
                 <span className="focus-input100"></span>
@@ -98,7 +99,6 @@ function Register() {
                   autoComplete="off"
                   name="username"
                   placeholder="Nhập tên đăng nhập"
-                  onChange={(e) => setUsername(e.target.value)}
                   {...register("username", { required: true, minLength: 5 })}
                 ></input>
                 <span className="focus-input100"></span>
@@ -123,9 +123,8 @@ function Register() {
                   className="input100 inputpass"
                   type="password"
                   autoComplete="off"
-                  name="password"
+                  name="username"
                   placeholder="Nhập mật khẩu"
-                  onChange={(e) => setPassword(e.target.value)}
                   {...register("password", { required: true, minLength: 8 })}
                 ></input>
                 <span className="focus-input100"></span>
@@ -156,7 +155,6 @@ function Register() {
                   autoComplete="off"
                   name="email"
                   placeholder="Nhập email"
-                  onChange={(e) => setEmail(e.target.value)}
                   {...register("email", {
                     required: true,
                     pattern:
@@ -186,7 +184,6 @@ function Register() {
                   autoComplete="off"
                   name="phone"
                   placeholder="Nhập số điện thoại"
-                  onChange={(e) => setPhone(e.target.value)}
                   {...register("phone", { required: true, minLength: 9 })}
                 ></input>
                 <span className="focus-input100"></span>
@@ -205,14 +202,12 @@ function Register() {
             <div className="container-login100-form-btn">
               <div className="wrap-login100-form-btn">
                 <div className="login100-form-bgbtn"></div>
-                <button className="login100-form-btn " onClick={RegisterApp}>
-                  Đăng ký
-                </button>
+                <button className="login100-form-btn" type='submit'>Đăng ký</button>
               </div>
             </div>
           </form>
 
-          <div className="flex-col-c p-t-30">
+          <div className="flex-col-c p-t-50">
             <span className="txt1 p-b-17">Đã có tài khoản ?</span>
 
             <Link to="/login" className="txt2">

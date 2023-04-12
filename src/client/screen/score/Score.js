@@ -7,14 +7,18 @@ import { Header, Footer } from "../../../components/index.component";
 
 function Example() {
   const [data, setData] = useState([]);
-  const getTableData = async () => {
-    await axios.get("http://localhost:8080/score/findAll").then((res) => {
-      setData(res.data.list);
-    });
-  };
+
   useEffect(() => {
+    const getTableData = async () => {
+      await axios
+        .get("http://localhost:8080/api/score/user/findAll")
+        .then((res) => {
+          setData(res.data);
+        });
+    };
     getTableData();
-  }, []);
+  });
+
   const columns = useMemo(
     () => [
       {
@@ -62,9 +66,8 @@ function Example() {
   return (
     <div className="container-score">
       <Header></Header>
-      <div  className="container-scores">
+      <div className="container-scores">
         <MaterialReactTable
-         
           columns={columns}
           data={data}
           enableColumnActions={false}

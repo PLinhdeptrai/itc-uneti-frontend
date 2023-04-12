@@ -10,7 +10,7 @@ import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { useContext } from "react";
 
 const Navbar = () => {
-//   const { dispatch } = useContext(DarkModeContext);
+  // const { dispatch } = useContext(DarkModeContext);
 
   return (
     <div className="navbar">
@@ -20,19 +20,14 @@ const Navbar = () => {
           <SearchOutlinedIcon />
         </div>
         <div className="items">
-          <div className="item">
-            <LanguageOutlinedIcon className="icon" />
-            English
-          </div>
+          
           {/* <div className="item">
             <DarkModeOutlinedIcon
               className="icon"
               onClick={() => dispatch({ type: "TOGGLE" })}
             />
           </div> */}
-          <div className="item">
-            <FullscreenExitOutlinedIcon className="icon" />
-          </div>
+          
           <div className="item">
             <NotificationsNoneOutlinedIcon className="icon" />
             <div className="counter">1</div>
@@ -53,6 +48,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

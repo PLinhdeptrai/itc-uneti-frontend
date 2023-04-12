@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../asset/css/GlobleStyle.css'
+import '../../../asset/css/GlobleStyle.css'
 import './courItem.css'
 
 function Newpost({item, text, circle}) {
