@@ -1,23 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.css';
-import { Provider } from 'react-redux';
-import reduxConfig from './redux';
+import "bootstrap/dist/css/bootstrap.css";
+import { Provider } from "react-redux";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+import store from "./redux/store";
+const root = ReactDOM.createRoot(document.getElementById("root"));
+let persistor = persistStore(store);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-const store = reduxConfig()
 root.render(
   <Provider store={store}>
-    <React.StrictMode >
-      <BrowserRouter>
-        <App></App>
-      </BrowserRouter>
-    </React.StrictMode>
+    <PersistGate persistor={persistor}>
+        <BrowserRouter>
+          <App></App>
+        </BrowserRouter>
+    </PersistGate>
   </Provider>
 );
 //BrowserRouter bọc xong app mới dùng dc react-router-dom
