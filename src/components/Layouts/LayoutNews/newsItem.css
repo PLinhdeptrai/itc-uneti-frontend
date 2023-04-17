@@ -10,7 +10,7 @@
     background-image: url(../../../asset/image/background.png);
     background-repeat:no-repeat;
     background-size: cover;
-    padding: 50px 80px;
+    padding: 120px 80px 50px 80px;
     display: flex;
     justify-content: space-between;
 

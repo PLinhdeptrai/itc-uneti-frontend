@@ -10,34 +10,45 @@ import { AiOutlinePhone } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 import { IoEyeSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 function Register() {
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = async (formData)  => {
+  const navigate = useNavigate();
+  const onSubmit = async (formData) => {
     const newUser = {
       username: formData.username,
       password: formData.password,
       email: formData.email,
-      roles: ["user"]
-    }
+      roles: ["user"],
+    };
     const data = await axios
       .post("http://localhost:8080/api/auth/register", newUser)
       .then(function (data) {
-        console.log(data.data);
-        alert("thanh cong");
+        swal({
+          title: "Đăng ký thành công",
+          text: "",
+          icon: "success",
+          button: "OK",
+        }).then(() => {
+          navigate("/login");
+        });
       })
       .catch(function (error) {
-        console.log(error);
-        alert("loi roi");
+        swal({
+          title: "Đăng ký không thành công!",
+          text: "Vui lòng nhập thông tin chính xác",
+          icon: "error",
+          button: "OK",
+        });
       });
-  } 
- 
+  };
+
   const Eyes = () => {
     const inputpass = document.querySelector(".inputpass");
     const eyesOpen = document.querySelector(".eyes-open");
@@ -202,7 +213,9 @@ function Register() {
             <div className="container-login100-form-btn">
               <div className="wrap-login100-form-btn">
                 <div className="login100-form-bgbtn"></div>
-                <button className="login100-form-btn" type='submit'>Đăng ký</button>
+                <button className="login100-form-btn" type="submit">
+                  Đăng ký
+                </button>
               </div>
             </div>
           </form>

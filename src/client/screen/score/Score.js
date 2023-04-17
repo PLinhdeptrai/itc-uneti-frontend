@@ -6,31 +6,40 @@ import { Header, Footer } from "../../../components/index.component";
 import { useSelector } from "react-redux";
 import { loginSelector } from "../../../redux/slice/login";
 import { useNavigate, useLocation } from "react-router-dom";
+import swal from "sweetalert";
 //nested data is ok, see accessorKeys in ColumnDef below
 
 function Example() {
   const location = useLocation();
   const navigate = useNavigate();
   const user = useSelector(loginSelector.currentUser);
-  const token = useSelector(loginSelector.currentToken)
+  const token = useSelector(loginSelector.currentToken);
   const [data, setData] = useState([]);
 
   useEffect(() => {
     if (user === null) {
-      alert("Please login to access data");
-      navigate("/login");
+      swal({
+        title: "Vui lòng đăng nhập để xem điểm",
+        text: "",
+        icon: "warning",
+        button: "OK",
+      }).then(() => {
+        navigate("/login");
+      });
     }
   }, [user, location]);
 
   useEffect(() => {
     const getTableData = async () => {
-      await axios.get("http://localhost:8080/api/score/user/findAll" ,  {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      }).then((res) => {
-        setData(res.data.list);
-      });
+      await axios
+        .get("http://localhost:8080/api/score/user/findAll", {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
+        .then((res) => {
+          setData(res.data.list);
+        });
     };
     getTableData();
   }, []);

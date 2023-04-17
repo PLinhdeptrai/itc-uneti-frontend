@@ -17,7 +17,6 @@ const userSlice = createSlice({
 			state.user = action.payload;
 		},
 		logout: state => {
-            alert("Bạn đã đăng xuất")
 			state.token = '';
 			state.user = null;
 		},

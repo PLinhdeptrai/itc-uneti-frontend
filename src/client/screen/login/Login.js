@@ -13,13 +13,13 @@ import { Link, useNavigate } from "react-router-dom";
 import path from "../../../utils/path/path";
 import * as apis from "../../../apis/index.api";
 import axios from "axios";
-
 import { loginActions } from "../../../redux/slice/login";
 import { useDispatch } from "react-redux";
+import swal from "sweetalert";
 
 function Login() {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -48,18 +48,38 @@ function Login() {
     const data = await axios
       .post("http://localhost:8080/api/auth/login", { username, password })
       .then(function (data) {
-        dispatch(loginActions.login(data.data.accessToken))
-        dispatch(loginActions.setUser(data.data))
-        if (data.data.roles.includes("ROLE_ADMIN"))
-          navigate('/admin')
-        else navigate("/")
-        alert("thanh cong");
+        dispatch(loginActions.login(data.data.accessToken));
+        dispatch(loginActions.setUser(data.data));
+        if (data.data.roles.includes("ROLE_ADMIN")) {
+          swal({
+            title: "Đăng nhập thành công",
+            text: "",
+            icon: "success",
+            button: "OK",
+          }).then(() => {
+            navigate("/admin");
+          });
+        } else {
+          swal({
+            title: "Đăng nhập thành công",
+            text: "",
+            icon: "success",
+            button: "OK",
+          }).then(() => {
+            navigate("/");
+          });
+        }
       })
       .catch(function (error) {
-        console.log(error);
-        alert("loi roi");
+        swal({
+          title: "Đăng nhập không thành công",
+          text: "Sai tên tài khoản hoặc mật khẩu",
+          icon: "error",
+          button: "OK",
+        });
       });
   }
+
   return (
     <div className="container-register">
       <div className="form-login wrap-login100 wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">

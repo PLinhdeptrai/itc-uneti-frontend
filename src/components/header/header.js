@@ -17,8 +17,8 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { loginSelector, loginActions } from "../../redux/slice/login";
 function HomePage() {
-  const dispatch = useDispatch()
-  const user = useSelector(loginSelector.currentUser)
+  const dispatch = useDispatch();
+  const user = useSelector(loginSelector.currentUser);
   return (
     <div>
       <Navbar expand="xl" className="header-nav">
@@ -33,23 +33,23 @@ function HomePage() {
           <Navbar.Collapse className="header-collapse" id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link className="header-selection" href="/">
-                <FaHome className="nav-icon" size={45} color="#4153cc" />{" "}
+                <FaHome className="nav-icon" size={40} color="#4153cc" />{" "}
                 <p>Trang chủ</p>
               </Nav.Link>
               <Nav.Link className="header-selection" href="/link">
-                <FaRocket className="nav-icon" size={45} color="#4153cc" />
+                <FaRocket className="nav-icon" size={40} color="#4153cc" />
                 <p>Hoạt động</p>
               </Nav.Link>
               <Nav.Link className="header-selection" href="/cour">
-                <FaBookOpen className="nav-icon" size={45} color="#4153cc" />{" "}
+                <FaBookOpen className="nav-icon" size={40} color="#4153cc" />{" "}
                 <p>Khóa học</p>
               </Nav.Link>
               <Nav.Link className="header-selection" href="/news">
-                <FaBell className="nav-icon" size={45} color="#4153cc" />{" "}
+                <FaBell className="nav-icon" size={40} color="#4153cc" />{" "}
                 <p>Sự kiện</p>
               </Nav.Link>
               <Nav.Link className="header-selection" href="/score">
-                <FaChartBar className="nav-icon" size={45} color="#4153cc" />{" "}
+                <FaChartBar className="nav-icon" size={40} color="#4153cc" />{" "}
                 <p>Xem điểm</p>
               </Nav.Link>
               <Nav.Link className="header-selection" href="#v">
@@ -60,36 +60,43 @@ function HomePage() {
                 />{" "}
                 <p>Liên hệ</p>
               </Nav.Link>
-              {
-                user === null ? (  <div className="button-header me-auto">
-                <Nav.Link
-                  className="header-selection login-button-link"
-                  href="/login"
-                >
-                  <Button className="login-button btn-link">
-                    <AccountCircleIcon className="login-icon" />
-                    Đăng nhập
-                  </Button>{" "}
-                </Nav.Link>
-                <Nav.Link
-                  className="header-selection login-button-link"
-                  href="/register"
-                >
-                  <Button className="login-button btn-link">
-                    <AccountCircleIcon className="login-icon" />
-                    Đăng kí
-                  </Button>{" "}
-                </Nav.Link>
-              </div>) : (
-                 <div className="header-user">
-                 <AccountCircleIcon></AccountCircleIcon>
-                 <p className="header-user-name">{user?.username}</p>
-                 <p className="header-logout" onClick={() => dispatch(loginActions.logout())}>Đăng xuất</p>
-               </div>
-              )
-              }
-            
-             
+              {user === null ? (
+                <div className="button-header me-auto">
+                  <Nav.Link
+                    className="header-selection login-button-link"
+                    href="/login"
+                  >
+                    <Button className="login-button btn-link">
+                      <AccountCircleIcon className="login-icon" />
+                      Đăng nhập
+                    </Button>{" "}
+                  </Nav.Link>
+                  <Nav.Link
+                    className="header-selection login-button-link"
+                    href="/register"
+                  >
+                    <Button className="login-button btn-link">
+                      <AccountCircleIcon className="login-icon" />
+                      Đăng kí
+                    </Button>{" "}
+                  </Nav.Link>
+                </div>
+              ) : (
+                <div className="header-user">
+                  <div className="header-user-left">
+                    <AccountCircleIcon></AccountCircleIcon>
+                    <p className="header-user-name">Xin chào {user?.username}</p>
+                  </div>
+                  <div className="header-user-logout">
+                    <p
+                      className="header-logout"
+                      onClick={() => dispatch(loginActions.logout())}
+                    >
+                      Đăng xuất
+                    </p>
+                  </div>
+                </div>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

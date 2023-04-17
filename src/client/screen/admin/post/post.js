@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../../../asset/css/postadmin.css";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
@@ -12,6 +12,8 @@ import Slidebar from "../../../../components/admin/slidebar/slidebar";
 import Navbar from "../../../../components/admin/navbar/navbar";
 import { loginSelector } from "../../../../redux/slice/login";
 import { useSelector } from "react-redux";
+import swal from "sweetalert";
+
 function PostAdmin() {
   const token = useSelector(loginSelector.currentToken);
   const [title, setTitle] = useState("");
@@ -33,14 +35,19 @@ function PostAdmin() {
         },
       })
       .then(function (data) {
-        console.log(data.data);
-        alert("thanh cong");
+        swal({
+          title: "Đăng bài thành công!",
+          text: "",
+          icon: "success",
+          button: "OK",
+        });
       })
       .catch(function (error) {
         console.log(error);
         alert("loi roi");
       });
   };
+
   return (
     <div className="admin-post">
       <div>
@@ -85,10 +92,7 @@ function PostAdmin() {
             <CKEditor
               editor={ClassicEditor}
               data=""
-              onReady={(editor) => {
-                // You can store the "editor" and use when it is needed.
-                console.log("Editor is ready to use!", editor);
-              }}
+              onReady={(editor) => {}}
               onChange={(event, editor) => {
                 const data = editor.getData();
                 setContent(data);
