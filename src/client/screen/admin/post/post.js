@@ -10,7 +10,10 @@ import Col from "react-bootstrap/Col";
 import axios from "axios";
 import Slidebar from "../../../../components/admin/slidebar/slidebar";
 import Navbar from "../../../../components/admin/navbar/navbar";
+import { loginSelector } from "../../../../redux/slice/login";
+import { useSelector } from "react-redux";
 function PostAdmin() {
+  const token = useSelector(loginSelector.currentToken);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [content, setContent] = useState("");
@@ -26,9 +29,7 @@ function PostAdmin() {
     const data = await axios
       .post("http://localhost:8080/api/news/create", formData, {
         headers: {
-          Authorization:
-            "Bearer " +
-            "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkcGxpbmgiLCJpYXQiOjE2ODExOTg1NDUsImV4cCI6MTY4MTI4NDk0NX0.gyWIQLtTMC2CsvCzR6LFr7pm4_qKVfQw8NO96wVhj6AxLs3HBgil6ZIEwfYLotLN7Xz9xGDj12XInClHohuQ6g",
+          Authorization: "Bearer " + token,
         },
       })
       .then(function (data) {
@@ -41,82 +42,75 @@ function PostAdmin() {
       });
   };
   return (
-    <div className="home">
-      <Slidebar />
-
-      <div className="homeContainer">
-        <Navbar></Navbar>
-        <div className="admin-post">
-          <div>
-            <h1 className="admin-post-title">Đăng bài</h1>
-          </div>
-          <Form>
-            <Row>
-              <Col>
-                <Form.Group className="mb-3" controlId="title">
-                  <Form.Label>Tiêu đề: </Form.Label>
-                  <Form.Control
-                    onChange={(e) => setTitle(e.target.value)}
-                    type="text"
-                    placeholder="Nhập tiêu đề"
-                  />
-                </Form.Group>
-              </Col>
-              <Col>
-                <Form.Group className="mb-3" controlId="description">
-                  <Form.Label>Mô tả</Form.Label>
-                  <Form.Control
-                    onChange={(e) => setDesc(e.target.value)}
-                    type="text"
-                    placeholder="Mô tả bài viết"
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <Form.Group className="mb-3" controlId="description">
-                  <Form.Label>Tải hình ảnh lên</Form.Label>
-                  <Form.Control
-                    onChange={(e) => setFile(e.target.files[0])}
-                    type="file"
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <CKEditor
-                  editor={ClassicEditor}
-                  data=""
-                  onReady={(editor) => {
-                    // You can store the "editor" and use when it is needed.
-                    console.log("Editor is ready to use!", editor);
-                  }}
-                  onChange={(event, editor) => {
-                    const data = editor.getData();
-                    setContent(data);
-                  }}
-                  onBlur={(event, editor) => {}}
-                  onFocus={(event, editor) => {}}
-                />
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <Button
-                  variant="primary"
-                  type="button"
-                  className="post-admin-button"
-                  onClick={() => handleSubmit()}
-                >
-                  Đăng ngay
-                </Button>
-              </Col>
-            </Row>
-          </Form>
-        </div>
+    <div className="admin-post">
+      <div>
+        <h1 className="admin-post-title">Đăng bài</h1>
       </div>
+      <Form>
+        <Row>
+          <Col>
+            <Form.Group className="mb-3" controlId="title">
+              <Form.Label>Tiêu đề: </Form.Label>
+              <Form.Control
+                onChange={(e) => setTitle(e.target.value)}
+                type="text"
+                placeholder="Nhập tiêu đề"
+              />
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group className="mb-3" controlId="description">
+              <Form.Label>Mô tả</Form.Label>
+              <Form.Control
+                onChange={(e) => setDesc(e.target.value)}
+                type="text"
+                placeholder="Mô tả bài viết"
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Form.Group className="mb-3" controlId="description">
+              <Form.Label>Tải hình ảnh lên</Form.Label>
+              <Form.Control
+                onChange={(e) => setFile(e.target.files[0])}
+                type="file"
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <CKEditor
+              editor={ClassicEditor}
+              data=""
+              onReady={(editor) => {
+                // You can store the "editor" and use when it is needed.
+                console.log("Editor is ready to use!", editor);
+              }}
+              onChange={(event, editor) => {
+                const data = editor.getData();
+                setContent(data);
+              }}
+              onBlur={(event, editor) => {}}
+              onFocus={(event, editor) => {}}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Button
+              variant="primary"
+              type="button"
+              className="post-admin-button"
+              onClick={() => handleSubmit()}
+            >
+              Đăng ngay
+            </Button>
+          </Col>
+        </Row>
+      </Form>
     </div>
   );
 }

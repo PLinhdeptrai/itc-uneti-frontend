@@ -2,6 +2,7 @@ import Sidebar from "../../../components/admin/slidebar/slidebar";
 import Navbar from "../../../components/admin/navbar/navbar";
 import "./index.scss";
 import Widget from "../../../components/admin/Widget/Widget";
+import { Outlet } from "react-router-dom";
 // import Featured from "../../components/featured/Featured";
 // import Chart from "../../components/chart/Chart";
 // import Table from "../../components/table/Table";
@@ -26,6 +27,7 @@ const Admin = () => {
           <div className="listTitle">Latest Transactions</div>
           <Table />
         </div> */}
+        <Outlet />
       </div>
     </div>
   );

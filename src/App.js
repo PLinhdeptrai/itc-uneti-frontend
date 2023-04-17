@@ -15,6 +15,7 @@ import ContestItem from "./components/Layouts/LayoutContest/ContestItem";
 import DocumentItem from "./components/Layouts/LayoutDoc/DocumentItem";
 import Admin from "./client/screen/admin/index";
 import PostAdmin from "./client/screen/admin/post/post";
+import Authorized from "./components/Authorized";
 function App() {
   return (
     <div>
@@ -29,8 +30,9 @@ function App() {
         <Route path={path.CONTEST} element={<ContestItem />} />
         <Route path={path.NEWS} element={<NewsFit />} />
         <Route path={path.DOCUMENT} element={<DocumentItem />} />
-        <Route path={path.ADMIN} element={<Admin />} />
-        <Route path={path.ADMINPOST} element={<PostAdmin />} />
+        <Route path={path.ADMIN} element={<Authorized component={Admin} />}>
+          <Route path={path.ADMINPOST} element={<PostAdmin />} />
+        </Route>
       </Routes>
     </div>
   );

@@ -14,7 +14,11 @@ import {
   FaChartBar,
   FaQuestionCircle,
 } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import { loginSelector, loginActions } from "../../redux/slice/login";
 function HomePage() {
+  const dispatch = useDispatch()
+  const user = useSelector(loginSelector.currentUser)
   return (
     <div>
       <Navbar expand="xl" className="header-nav">
@@ -56,7 +60,8 @@ function HomePage() {
                 />{" "}
                 <p>Liên hệ</p>
               </Nav.Link>
-              <div className="button-header me-auto">
+              {
+                user === null ? (  <div className="button-header me-auto">
                 <Nav.Link
                   className="header-selection login-button-link"
                   href="/login"
@@ -75,11 +80,16 @@ function HomePage() {
                     Đăng kí
                   </Button>{" "}
                 </Nav.Link>
-              </div>
-              <div className="header-user">
-                <AccountCircleIcon></AccountCircleIcon>
-                <p className="header-user-name">Đặng Phúc Linh</p>
-              </div>
+              </div>) : (
+                 <div className="header-user">
+                 <AccountCircleIcon></AccountCircleIcon>
+                 <p className="header-user-name">{user?.username}</p>
+                 <p className="header-logout" onClick={() => dispatch(loginActions.logout())}>Đăng xuất</p>
+               </div>
+              )
+              }
+            
+             
             </Nav>
           </Navbar.Collapse>
         </Container>

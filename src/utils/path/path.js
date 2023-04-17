@@ -11,8 +11,8 @@ const path = {
     CONTEST: 'contest/*',
     NEWS: 'news/*',
     DOCUMENT: 'document/*',
-    ADMIN: 'admin',
-    ADMINPOST: 'admin/post'
+    ADMIN: '/admin',
+    ADMINPOST: 'post'
 }
 
 export default path

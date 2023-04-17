@@ -59,7 +59,7 @@ function Register() {
         <div className="login100-form validate-form">
           <form className="login-body " onSubmit={handleSubmit(onSubmit)}>
             <div className="login-title login100-form-title p-b-12">
-              <h3>Đăng Kí</h3>
+              <h3>Đăng Ký</h3>
             </div>
             <div
               className="login-input wrap-input100 validate-input m-t-23"

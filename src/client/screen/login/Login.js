@@ -14,7 +14,12 @@ import path from "../../../utils/path/path";
 import * as apis from "../../../apis/index.api";
 import axios from "axios";
 
+import { loginActions } from "../../../redux/slice/login";
+import { useDispatch } from "react-redux";
+
 function Login() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -43,7 +48,11 @@ function Login() {
     const data = await axios
       .post("http://localhost:8080/api/auth/login", { username, password })
       .then(function (data) {
-        console.log(data.data);
+        dispatch(loginActions.login(data.data.accessToken))
+        dispatch(loginActions.setUser(data.data))
+        if (data.data.roles.includes("ROLE_ADMIN"))
+          navigate('/admin')
+        else navigate("/")
         alert("thanh cong");
       })
       .catch(function (error) {

@@ -76,6 +76,13 @@
 .header-user .header-user-name{
     margin-left: 4px;
 }
+.header-logout{
+    margin-left: 20px;
+    cursor: pointer;
+}
+.header-logout:hover{
+    color: blue;
+}
 /* @media screen and (max-width: 1200px) {
     .
   } */
