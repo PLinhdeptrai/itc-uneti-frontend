@@ -5,7 +5,7 @@ import Tkdh from '../../../asset/image/Contest/tkdh.jpg'
 import './newsItem.css'
 function NavNews() {
   return (
-    <Container>
+    <Container className='nav-contest'>
       <Row>
         <Col>
             <div className='nav_items'>

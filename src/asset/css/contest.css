@@ -70,3 +70,21 @@
 .body-card{
     padding: 10px;
 }
+@media (min-width: 740px) and (max-width: 1023px){
+    .flex-time{
+        display: flex;
+        flex-direction: column;
+        }
+        .p1-time, .p2-time{
+            margin: 0;
+        }
+        .btn-view{
+            margin-top: 0;
+        }
+    }
+@media screen and (max-width: 740px) {
+    .flex-time{
+        display: flex;
+        flex-direction: column;
+    }
+}
