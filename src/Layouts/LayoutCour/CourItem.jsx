@@ -127,7 +127,7 @@ function CourItem() {
                         <h5  className='info' style={{textDecoration: 'underline', fontStyle: 'italic'}}>Thông tin bổ sung khoá học</h5>
                         <span>{item.bonus}</span>
                         <h5 className='info' style={{textDecoration: 'underline', fontStyle: 'italic'}}>Giới thiệu ngôn ngữ {item.nameCour}</h5>
-                        <iframe width="100%" height="420" src="https://www.youtube.com/embed/1HakS7KsbCk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe className="mobile-size" width="100%" height="420" src="https://www.youtube.com/embed/1HakS7KsbCk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                       </div>
                   ))}
                   </div>

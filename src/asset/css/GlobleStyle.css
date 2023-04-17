@@ -33,3 +33,20 @@
     align-items: center;
     padding-top: 25px;
 }
+@media (min-width: 740px) and (max-width: 1023px){
+    .card{
+        height: 320px !important;
+        width: 44% !important;
+    }
+    .card-circle{
+        height: 230px !important;
+        width: 230px !important;
+    }
+}
+@media screen and (max-width: 740px) {
+    .card{
+        height: 320px !important;
+        width: 100% !important;
+    
+    }
+}

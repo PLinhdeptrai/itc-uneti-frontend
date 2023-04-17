@@ -124,7 +124,6 @@ function NewsFit() {
             <div className='sliderNews'>
               <Newpost item={cardCour} text='KHÓA HỌC LIÊN QUAN' circle={false}/>
               <Newpost item={cardActive} text='BÀI VIẾT MỚI NHẤT' circle={true}/>
-              <Newpost item={cardActive} text='BÀI VIẾT MỚI NHẤT' circle={true}/>
             </div>
         </div>
       <Footer />

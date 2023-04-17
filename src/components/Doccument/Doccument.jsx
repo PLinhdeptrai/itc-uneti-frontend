@@ -52,7 +52,7 @@ function Doccument() {
         </div>
         <div className='ListDoc'>
             {docum.map((item) => (
-                <div key={item.id}>
+                <div className='render-size' key={item.id}>
                     <Link className='card-circle' to={`/document/${item.id}`} style={{textDecoration: "none"}}>
                         <div className='card-item' style={{backgroundColor: `${item.bgColor}`}}>
                             <img src={item.img} alt='error'></img>

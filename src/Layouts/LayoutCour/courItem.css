@@ -106,3 +106,57 @@
 .info{
     margin: 20px 0;
 }
+@media (min-width: 740px) and (max-width: 1023px){
+    .containerCour{
+        flex-direction: column-reverse;
+        padding: 50px 40px;
+    }
+    .bodyCour{
+        width: 100%;
+    }
+    .card-post{
+        width: 48%;
+    }
+    .post-and-cour{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+}
+@media (max-width: 740px) {
+    .containerCour{
+        flex-direction: column-reverse;
+        padding: 50px 20px;
+    }
+    .bodyCour{
+        width: 100%;
+        flex-direction: column;
+    }
+    .slideCour{
+        width: 100%;
+        height: 270px !important;
+    }
+    .mobile-size{
+        height: 270px !important;
+    }
+    .w-100{
+        height: 270px !important;
+    }
+    .infoCour{
+        width: 100%;
+    }
+    .card-post{
+        width: 100%;
+    }
+    .post-and-cour{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+}
