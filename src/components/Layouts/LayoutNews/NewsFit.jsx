@@ -84,6 +84,7 @@ function NewsFit() {
         })
         .then((res) => {
           setDataNews(res.data);
+          console.log(res.data)
         });
     };
     getNewData();

@@ -16,6 +16,7 @@ import DocumentItem from "./components/Layouts/LayoutDoc/DocumentItem";
 import Admin from "./client/screen/admin/index";
 import PostAdmin from "./client/screen/admin/post/post";
 import Authorized from "./components/Authorized";
+import NEW2 from "./client/screen/news2"
 function App() {
   return (
     <div>
@@ -33,6 +34,7 @@ function App() {
         <Route path={path.ADMIN} element={<Authorized component={Admin} />}>
           <Route path={path.ADMINPOST} element={<PostAdmin />} />
         </Route>
+        <Route path={path.NEW2} element={<NEW2 />}></Route>
       </Routes>
     </div>
   );

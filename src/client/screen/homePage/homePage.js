@@ -11,6 +11,7 @@ import {
   Footer,
 } from "../../../components/index.component";
 import ScrollToTop from "react-scroll-to-top";
+import NEW2 from "../news2";
 const HomePage = () => {
   return (
     <div>
@@ -18,7 +19,9 @@ const HomePage = () => {
       <Header />
       <div className="container-homepage">
         <Slider className="slider-mg" />
+        
         <News />
+        <NEW2></NEW2>
         <Cour />
         <Contest />
         <Doccument />
