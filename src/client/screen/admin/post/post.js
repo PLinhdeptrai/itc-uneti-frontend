@@ -25,7 +25,7 @@ function PostAdmin() {
     formData.append("title", title);
     formData.append("description", desc);
     formData.append("content", content);
-    formData.append("file", file, "img.png");
+    formData.append("file", file);
 
     console.log(formData);
     const data = await axios
