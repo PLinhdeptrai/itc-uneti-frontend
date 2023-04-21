@@ -20,10 +20,10 @@ export default function Footer() {
           </div>
           <p className="param">
             {" "}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi illum
-            ut, corrupti nesciunt, aliquid temporibus accusantium quod, facilis
-            sequi doloribus totam quos. Corrupti adipisci dolores porro dolore
-            similique velit eligendi.
+            Câu lạc bộ Tin học - ITC trực thuộc khoa Công nghệ thông tin Trường
+            Đại học Kinh tế – Kỹ thuật Công nghiệp. Được thành lập và chính thức
+            đi vào hoạt động từ 02/04/2013 với phương châm mới mẻ - năng động -
+            sáng tạo. Hãy gia nhập với chúng tôi ngay hôm nay!
           </p>
         </div>
         <div className="col">
@@ -81,7 +81,12 @@ export default function Footer() {
           </h3>
           <form className="email-footer">
             <FaEnvelope className="icon-mail" />
-            <input type="email" placeholder="Enter your email id" required className="input-footer" />
+            <input
+              type="email"
+              placeholder="Enter your email id"
+              required
+              className="input-footer"
+            />
             <button type="submit">
               <FaArrowRight className="icon-right" color="white" />
             </button>
@@ -95,16 +100,12 @@ export default function Footer() {
                 <FaFacebookF size={25} />
               </Link>
             </div>
-            
+
             <div className="fab">
-              <Link
-                className=""
-                to={`https://www.tiktok.com/@itc.uneti`}
-              >
+              <Link className="" to={`https://www.tiktok.com/@itc.uneti`}>
                 <FaTiktok size={25} />
               </Link>
             </div>
-            
           </div>
         </div>
         <hr></hr>

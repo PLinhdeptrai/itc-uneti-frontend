@@ -26,7 +26,24 @@ import { loginSelector } from "../../../redux/slice/login";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
-function NewsFit() {
+function NewsFit({props}) {
+  const user = useSelector(loginSelector.currentUser);
+  const token = useSelector(loginSelector.currentToken);
+  const [datanews, setDataNews] = useState([]);
+  useEffect(() => {
+    const getNewData = async () => {
+      await axios
+        .get("http://localhost:8080/api/news", {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
+        .then((res) => {
+          setDataNews(res.data.list);
+        });
+    };
+    getNewData();
+  }, []);
   const newsfit = {
     title:
       "Hơn 100 doanh nghiệp tham gia chương trình “Ngày hội việc làm Uneti năm 2023”",
@@ -70,31 +87,13 @@ function NewsFit() {
       name: "Nhóm lập trình Website",
     },
   ];
-  const user = useSelector(loginSelector.currentUser);
-  const token = useSelector(loginSelector.currentToken);
-  const [datanews, setDataNews] = useState([]);
-  useEffect(() => {
-    const getNewData = async () => {
-      
-      await axios
-        .get("http://localhost:8080/api/introduction/user/3", {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        })
-        .then((res) => {
-          setDataNews(res.data);
-          console.log(res.data)
-        });
-    };
-    getNewData();
-  }, []);
+
   return (
     <div>
       <Header />
       <div className="containerNews">
         <div className="mainNews">
-          <h2>{newsfit.title}</h2>
+          <h2>{props.title}</h2>
           <div className="navNews">
             <div className="nav-left">
               <div className="nav-time">

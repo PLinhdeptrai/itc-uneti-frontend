@@ -11,15 +11,15 @@ const news = [
     name: "CÂU LẠC BỘ ITC",
     title: "INFOMATION TECHNOLOGY CLUB",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non",
+      "Câu lạc bộ Tin học - ITC trực thuộc khoa Công nghệ thông tin Trường ĐH Kinh tế – Kỹ thuật Công nghiệp được thành lập và chính thức đi vào hoạt động từ 02/04/2013. Trải qua 10 năm hoạt động và phát triển, từ một CLB còn non trẻ hiện nay đã và đang ngày càng vững mạnh với đội ngũ các thành viên năng động và đầy nhiệt huyết.",
     thumbnail: Image1,
   },
   {
     id: 2,
     name: "TRỰC THUỘC ITC",
     title: "TRỰC THUỘC KHOA CNTT UNETI",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non",
+    description:""
+      ,
     thumbnail: Image2,
   },
 ];

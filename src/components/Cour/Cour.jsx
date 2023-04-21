@@ -10,74 +10,58 @@ import Oop from "../../asset/image/Courses/Oop.jpg";
 import Web from "../../asset/image/Courses/Web.jpg";
 import Python from "../../asset/image/Courses/python.png";
 function Cour() {
-  //   const demoCourse = [
-  //     {
-  //       id: 1,
-  //       img: Oop,
-  //       nameCourse: "Lap Trinh Huong Doi Tuong",
-  //       teacher: "Pham Thuy",
-  //       description:
-  //         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-  //     },
-  //     {
-  //       id: 2,
-  //       img: Web,
-  //       nameCourse: "Lap Trinh Web",
-  //       teacher: "Hai Long",
-  //       description:
-  //         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-  //     },
-  //     {
-  //       id: 3,
-  //       img: Python,
-  //       nameCourse: "Lap trinh voi Python",
-  //       teacher: "Nguyen Van A",
-  //       description:
-  //         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-  //     },
-  //     {
-  //       id: 4,
-  //       img: Python,
-  //       nameCourse: "Lap trinh voi Python",
-  //       teacher: "Nguyen Van A",
-  //       description:
-  //         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-  //     },
-  //     {
-  //       id: 5,
-  //       img: Oop,
-  //       nameCourse: "Lap Trinh Huong Doi Tuong",
-  //       teacher: "Pham Thuy",
-  //       description:
-  //         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-  //     },
-  //     {
-  //       id: 6,
-  //       img: Web,
-  //       nameCourse: "Lap Trinh Web",
-  //       teacher: "Hai Long",
-  //       description:
-  //         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-  //     },
-  //   ];
-  const token = useSelector(loginSelector.currentToken);
-  const [datanews, setDataNews] = useState([]);
-  useEffect(() => {
-    const getNewData = async () => {
-      await axios
-        .get("http://localhost:8080/api/news/user/35", {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        })
-        .then((res) => {
-          setDataNews(res.data);
-          console.log(res.data);
-        });
-    };
-    getNewData();
-  }, []);
-  const Course = datanews;
+    const demoCourse = [
+      {
+        id: 1,
+        img: Oop,
+        nameCourse: "Lap Trinh Huong Doi Tuong",
+        teacher: "Pham Thuy",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      },
+      {
+        id: 2,
+        img: Web,
+        nameCourse: "Lap Trinh Web",
+        teacher: "Hai Long",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      },
+      {
+        id: 3,
+        img: Python,
+        nameCourse: "Lap trinh voi Python",
+        teacher: "Nguyen Van A",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      },
+      {
+        id: 4,
+        img: Python,
+        nameCourse: "Lap trinh voi Python",
+        teacher: "Nguyen Van A",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      },
+      {
+        id: 5,
+        img: Oop,
+        nameCourse: "Lap Trinh Huong Doi Tuong",
+        teacher: "Pham Thuy",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      },
+      {
+        id: 6,
+        img: Web,
+        nameCourse: "Lap Trinh Web",
+        teacher: "Hai Long",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      },
+    ];
+  
+  const Course = demoCourse;
   return (
     <div className="Cour">
       <div className="Title">
