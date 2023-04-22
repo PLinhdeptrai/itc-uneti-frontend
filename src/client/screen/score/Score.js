@@ -16,7 +16,6 @@ function Example() {
   const user = useSelector(loginSelector.currentUser);
   const token = useSelector(loginSelector.currentToken);
   const [data, setData] = useState([]);
-
   useEffect(() => {
     if (user === null) {
       swal({
@@ -67,10 +66,53 @@ function Example() {
       {
         accessorKey: "khoas",
         header: "Khóa",
+        Filter: ({ header }) => (
+          <TextField
+            onChange={(e) =>
+              header.column.setFilterValue(e.target.value || undefined)
+            }
+            select
+            value={header.column.getFilterValue() ?? ""}
+            margin="none"
+            placeholder="Filter"
+            variant="standard"
+            fullWidth
+          >
+            {/*@ts-ignore*/}
+            <MenuItem value={null}>All</MenuItem>
+            <MenuItem value="13">13</MenuItem>
+            <MenuItem value="14">14</MenuItem>
+            <MenuItem value="15">15</MenuItem>
+            <MenuItem value="16">16</MenuItem>
+          </TextField>
+        ),
       },
       {
         accessorKey: "nganh",
         header: "Ngành",
+        Filter: ({ header }) => (
+          <TextField
+            onChange={(e) =>
+              header.column.setFilterValue(e.target.value || undefined)
+            }
+            select
+            value={header.column.getFilterValue() ?? ""}
+            margin="none"
+            placeholder="Filter"
+            variant="standard"
+            fullWidth
+          >
+            {/*@ts-ignore*/}
+            <MenuItem value={null}>All</MenuItem>
+            <MenuItem value="Công nghệ thông tin">Công nghệ thông tin</MenuItem>
+            <MenuItem value="Công nghệ thông tin - Chất lượng">
+              Công nghệ thông tin - Chất lượng
+            </MenuItem>
+            <MenuItem value="Mang máy tính & TTDL">
+              Mang máy tính & TTDL
+            </MenuItem>
+          </TextField>
+        ),
       },
       {
         accessorKey: "address",
@@ -89,14 +131,18 @@ function Example() {
           >
             {/*@ts-ignore*/}
             <MenuItem value={null}>All</MenuItem>
-            <MenuItem value="HaNoi">Hà Nội</MenuItem>
-            <MenuItem value="NamDinh">Nam Định</MenuItem>
+            <MenuItem value="Hà Nội">Hà Nội</MenuItem>
+            <MenuItem value="Nam Định">Nam Định</MenuItem>
           </TextField>
         ),
+        // filterFn: (row, _columnIds, filterValue) =>
+        //     row.getValue < string > ('basis').toLowerCase() ===
+        //     filterValue.toLowerCase(),
       },
       {
         accessorKey: "classz",
         header: "Lớp",
+        enableColumnFilter: true,
       },
       {
         accessorKey: "averageScore",

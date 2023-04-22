@@ -36,8 +36,7 @@ function App() {
           <Route path={path.ADMIN} element={<Authorized component={Admin} />}>
             <Route path={path.ADMINPOST} element={<PostAdmin />} />
           </Route>
-          <Route path={path.NEW2} element={<NEW2 />}></Route>
-          <Route path="*" element={<NotFound />} />
+          <Route path={path.ERRORPAGE} element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

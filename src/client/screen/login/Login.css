@@ -241,6 +241,7 @@ iframe {
 
 .login-body {
   border-bottom: none !important;
+  display: block !important;
 }
 .login100-form {
   width: 100%;
