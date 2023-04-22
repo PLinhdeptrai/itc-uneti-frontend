@@ -18,8 +18,8 @@ const news = [
     id: 2,
     name: "TRỰC THUỘC ITC",
     title: "TRỰC THUỘC KHOA CNTT UNETI",
-    description:""
-      ,
+    description:
+      "Cùng với sự đổi mới sáng tạo không ngừng, CLB hiện đang gồm 2 mảng hoạt động chính:- Mảng học tập bao gồm các nhóm học tập: Nhóm lập trình căn bản C++, Nhóm lập trình Hướng đối tượng, Nhóm lập trình Java, Nhóm thiết kế đồ họa, Nhóm quản trị mạng, Nhóm lập trình Website,...- Mảng tình nguyện gồm Đội tình nguyện ITVT với 5 ban chuyên môn chính: Ban Content, Ban Hình ảnh, Ban Nhân sự, Ban Media, Ban Hậu Cần. Với sứ mệnh tạo ra một môi trường lành mạnh và một sân chơi bổ ích, chúng tôi cùng những con người đam mê thử thách, tạo ra những giá trị tích cực cho cộng đồng thông qua những hoạt động tình nguyện và giảng dạy. Hãy gia nhập với chúng tôi ngay hôm nay.",
     thumbnail: Image2,
   },
 ];

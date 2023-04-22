@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Header from "../../header/header";
 import Footer from "../../Footer/Footer";
 import Newpost from "../LayoutCour/NewPost";
@@ -25,25 +25,10 @@ import { useSelector } from "react-redux";
 import { loginSelector } from "../../../redux/slice/login";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-
-function NewsFit({props}) {
-  const user = useSelector(loginSelector.currentUser);
-  const token = useSelector(loginSelector.currentToken);
-  const [datanews, setDataNews] = useState([]);
-  useEffect(() => {
-    const getNewData = async () => {
-      await axios
-        .get("http://localhost:8080/api/news", {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        })
-        .then((res) => {
-          setDataNews(res.data.list);
-        });
-    };
-    getNewData();
-  }, []);
+import { dataContext } from "../../../client/screen/news2";
+function NewsFit() {
+  // const datanews = useContext(dataContext);
+  // console.log(datanews);
   const newsfit = {
     title:
       "Hơn 100 doanh nghiệp tham gia chương trình “Ngày hội việc làm Uneti năm 2023”",
@@ -93,7 +78,7 @@ function NewsFit({props}) {
       <Header />
       <div className="containerNews">
         <div className="mainNews">
-          <h2>{props.title}</h2>
+          <h2>{newsfit.title}</h2>
           <div className="navNews">
             <div className="nav-left">
               <div className="nav-time">

@@ -72,7 +72,7 @@
     }
     .itemNews:nth-child(odd){
         margin-top: 150px;
-        margin-bottom: 100px;
+        margin-bottom: 280px;
     }
     .itemNews:nth-child(odd) span{
         left: 3%;

@@ -13,7 +13,8 @@ const path = {
     DOCUMENT: 'document/*',
     ADMIN: '/admin',
     ADMINPOST: 'post',
-    NEW2: 'new2'
+    NEW2: 'new2',
+    ERRORPAGE:  'error'
 }
 
 export default path

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { useSelector } from "react-redux";
 import { loginSelector } from "../../redux/slice/login";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -11,6 +11,8 @@ import Row from "react-bootstrap/Row";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import NewsFit from "../../components/Layouts/LayoutNews/NewsFit";
+
+export const dataContext = createContext();
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -51,40 +53,44 @@ function NEW2() {
   }, []);
 
   datanews.reverse();
-  return (
-    <div className="container-new2">
-      <div className="header-new-top">
-        <h1 className="new2-title">HOẠT ĐỘNG</h1>
-      </div>
 
-      <div className="header-new-body">
-        <Carousel responsive={responsive} className="slider-news">
-          {datanews.map((item) => (
-            <div key={item.id}>
-              
-              <a href={`/news/${item.id}`} className="slider-card-news">
-                <Card className="new-card">
-                  <Card.Img
-                    className="new-card-image"
-                    variant="top"
-                    src={item.thumbnail}
-                  />
-                  <Card.Body className="new-card-body">
-                    <Card.Title className="new-card-title">
-                      {item.title}
-                    </Card.Title>
-                    <Card.Text className="new-card-more">Xem thêm</Card.Text>
-                  </Card.Body>
-                  <Card.Footer>
-                    <small className="text-muted">
-                      Last updated 3 mins ago
-                    </small>
-                  </Card.Footer>
-                </Card>
-              </a>
-            </div>
-          ))}
-        </Carousel>
+  return (
+    <div>
+      <div style={{ display: "none" }}>
+        <NewsFit />
+      </div>
+      <div className="container-new2">
+        <div className="header-new-top">
+          <h1 className="new2-title">HOẠT ĐỘNG</h1>
+        </div>
+        <div className="header-new-body">
+          <Carousel responsive={responsive} className="slider-news">
+            {datanews.map((item) => (
+              <div key={item.id}>
+                <a href={`/news/${item.id}`} className="slider-card-news">
+                  <Card className="new-card">
+                    <Card.Img
+                      className="new-card-image"
+                      variant="top"
+                      src={item.thumbnail}
+                    />
+                    <Card.Body className="new-card-body">
+                      <Card.Title className="new-card-title">
+                        {item.title}
+                      </Card.Title>
+                      <Card.Text className="new-card-more">Xem thêm</Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                      <small className="text-muted">
+                        Last updated 3 mins ago
+                      </small>
+                    </Card.Footer>
+                  </Card>
+                </a>
+              </div>
+            ))}
+          </Carousel>
+        </div>
       </div>
     </div>
   );

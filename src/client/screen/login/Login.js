@@ -46,7 +46,7 @@ function Login() {
   const [password, setPassword] = useState("");
   async function loginApp() {
     const data = await axios
-      .post("http://localhost:8080/api/auth/login", { username, password })
+      .post("https://large-waves-production.up.railway.app/api/auth/login", { username, password })
       .then(function (data) {
         dispatch(loginActions.login(data.data.accessToken));
         dispatch(loginActions.setUser(data.data));
