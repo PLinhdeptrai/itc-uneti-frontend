@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { loginSelector } from "../../../redux/slice/login";
 import { useNavigate, useLocation } from "react-router-dom";
 import swal from "sweetalert";
+import { MenuItem, TextField } from "@mui/material";
 //nested data is ok, see accessorKeys in ColumnDef below
 
 function Example() {
@@ -74,6 +75,24 @@ function Example() {
       {
         accessorKey: "address",
         header: "Cơ sở",
+        Filter: ({ header }) => (
+          <TextField
+            onChange={(e) =>
+              header.column.setFilterValue(e.target.value || undefined)
+            }
+            select
+            value={header.column.getFilterValue() ?? ""}
+            margin="none"
+            placeholder="Filter"
+            variant="standard"
+            fullWidth
+          >
+            {/*@ts-ignore*/}
+            <MenuItem value={null}>All</MenuItem>
+            <MenuItem value="HaNoi">Hà Nội</MenuItem>
+            <MenuItem value="NamDinh">Nam Định</MenuItem>
+          </TextField>
+        ),
       },
       {
         accessorKey: "classz",
