@@ -12,7 +12,8 @@ const path = {
     DOCUMENT: 'document/*',
     ADMIN: '/admin',
     ADMINPOST: 'post',
-    ERRORPAGE:  '*'
+    ERRORPAGE:  '*',
+    CK: 'edit'
 }
 
 export default path

@@ -17,6 +17,7 @@ import Admin from "./client/screen/admin/index";
 import PostAdmin from "./client/screen/admin/post/post";
 import Authorized from "./components/Authorized";
 import NotFound from "./client/screen/errorpage/errorpage";
+import MyCkeditor from "./components/ckeditor/Editor";
 function App() {
   return (
     <div>
@@ -36,6 +37,8 @@ function App() {
             <Route path={path.ADMINPOST} element={<PostAdmin />} />
           </Route>
           <Route path={path.ERRORPAGE} element={<NotFound />} />
+          <Route path={path.CK} element={<MyCkeditor />} />
+
         </Routes>
       </BrowserRouter>
     </div>

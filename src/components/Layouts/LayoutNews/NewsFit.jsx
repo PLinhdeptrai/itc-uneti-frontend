@@ -27,12 +27,10 @@ import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { dataContext } from "../../../client/screen/news2";
 function NewsFit() {
-  // const datanews = useContext(dataContext);
-  // console.log(datanews);
+
   const newsfit = {
-    title:
-      "Hơn 100 doanh nghiệp tham gia chương trình “Ngày hội việc làm Uneti năm 2023”",
-    time: " 25/03/2023",
+    title: "💥 [ RECAP: VÒNG CHUNG KẾT TOPCODER CONTEST 2023 ] 💥",
+    time: " 26/04/2023",
     view: 361,
     image1,
     image2,
@@ -105,66 +103,31 @@ function NewsFit() {
           </div>
           <div className="text-body">
             <span>
-              Với mong muốn cung cấp thông tin bổ ích và thiết thực, tạo điều
-              kiện để sinh viên cuối khóa tìm kiếm cơ hội phát triển nghề nghiệp
-              phù hợp với năng lực, chuyên ngành đào tạo, sáng ngày 25/03/2023,
-              Trường Đại học Kinh tế – Kỹ thuật Công nghiệp phối hợp cùng Liên
-              đoàn lao động Quận Hai Bà Trưng tổ chức chương trình “Ngày hội
-              việc làm Uneti năm 2023” với hơn 100 doanh nghiệp tham gia các
-              gian hàng tuyển dụng và gần 5.000 lượt sinh viên tham dự. Tham dự
-              chương trình, về phía đại biểu khách mời có:
-              <br></br>
-              1. Đồng chí Phan Văn Phúc - Ủy viên ban thường vụ Quận ủy - Phó
-              Chủ tịch UBND quận Hai Bà Trưng;
-              <br></br>
-              2. Đồng chí Tạ văn Dưỡng - Trưởng ban chính sách và Quan hệ lao
-              động, Liên đoàn lao động TP Hà Nội.
-              <br></br>
-              Về phía LĐLĐ Quận Hai Bà Trưng, đơn vị phối hợp tổ chức:
-              <br></br>
-              1. Đồng chí Nguyễn Thị Kim Dung - Chủ tịch Liên đoàn lao động Quận
-              Hai Bà Trưng;
-              <br></br>
-              2. Đồng chí Vũ Thị Trình - Phó chủ tịch Liên đoàn lao động Quận
-              Hai Bà Trưng;
-              <br></br>
-              3. Đồng chí Trần Thị Thanh Hải - Phó chủ tịch Liên đoàn lao động
-              Quận Hai Bà Trưng.
-              <br></br>
-              Cùng phóng viên Đài truyền hình Hà Nội, Đài truyền hình Nam Định,
-              Tạp chí Công thương và các đơn vị báo chí đưa tin sự kiện.
-              <br></br>
-              Về phía lãnh đạo Nhà trường tham dự có:
-              <br></br>
-              1. TS Trần Hoàng Long - Phó Bí thư Đảng ủy, Hiệu trưởng Nhà
-              trường;
-              <br></br>
-              2. NGƯT.TS Trần Đức Cân - Bí thư Đảng ủy, Phó Hiệu trưởng Nhà
-              trường;
-              <br></br>
-              3. TS Nguyễn Ngọc Khương - Đảng ủy viên, Phó Hiệu trưởng Nhà
-              trường;
-              <br></br>
-              4. PGS.TS Nguyễn Hữu Quang - TVĐU, Phó Hiệu trưởng Nhà trường.
-              <br></br>
-              Cùng các thầy, cô giáo lãnh đạo các đơn vị chức năng, các CBGV và
-              các em sinh viên Uneti tham dự
+              🚞 Vậy là chuyến hành trình mang tên "Topcoder Contest 2023" do
+              Liên chi Đoàn Công nghệ thông tin - CLB Tin học ITC phối hợp tổ
+              chức đã diễn ra thành công tốt đẹp với nhiều khoảnh khắc vô cùng
+              đáng nhớ. ✨ Cảm ơn tất cả các bạn đã góp phần tạo nên thành công
+              của cuộc thi năm nay. Chúng ta hãy cùng nhìn lại những khoảnh khắc
+              đẹp trong ngày thi hôm nay nhé.
+              <br></br>⏳ Nằm trong chuỗi hoạt động kỷ niệm 10 năm thành lập Câu
+              lạc bộ Tin học & nhằm tạo ra một sân chơi bổ ích cho các bạn sinh
+              viên K15 & K16, Liên chi Đoàn Khoa Công nghệ thông tin - Câu lạc
+              bộ Tin học phối hợp tổ chức cuộc thi “TOPCODER CONTEST 2023”. 🎀
+              Ban tổ chức Cuộc thi "Topcoder Contest 2023" xin trân trọng gửi
+              lời cảm ơn tới Nhà tài trợ chính thức cuộc thi: 𝙈𝙞𝙣𝙙𝘾𝙝𝙖𝙞𝙣 𝘼𝙘𝙖𝙙𝙚𝙢𝙮.
             </span>
             <img
-              src={newsfit.image1}
+              src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/342515156_585890736939186_2896494742350478384_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=4RqTTvyIckoAX_Y0rU3&_nc_ht=scontent.fhan14-1.fna&oh=00_AfCSsskxvDIoyfoN9H9qULLKQKQaZDGDsD47sk50fHT2sw&oe=644C9A1B"
               className="img-text-body"
               alt="error"
             ></img>
-            <span>
-              Trong phần lễ được diễn ra tại Hội trường tầng 2 nhà HA10 cơ sở
-              218 Lĩnh Nam – Hà Nội, Trước khi chương trình diễn ra, đội văn
-              nghệ Nhà trường trình diễn các tiết mục đặc sắc
-            </span>
+            <span>Các thành viên tham giam tại cơ sở Hà Nội</span>
             <img
-              src={newsfit.image3}
+              src="https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/342342399_135020502795652_5001386773534976681_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=Ey8SDyC5yIMAX9iOD2-&_nc_ht=scontent.fhan14-3.fna&oh=00_AfAJHFyc5mCF9e-b3yHk12_EwV7jlyH4TnPduhRJy7kUgA&oe=644D5C00"
               className="img-text-body"
               alt="error"
             ></img>
+            <span>Các thành viên tham giam tại cơ sở Nam Định</span>
           </div>
         </div>
         <div className="sliderNews">

@@ -60,9 +60,9 @@ const demoItem = [
     jobTeach: "Cựu sinh viên",
     nameTeach: "Nguyễn Văn A",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "Khóa học JavaScript cơ bản sẽ hướng dẫn các bạn về một số kiến thức: Các kiểu dữ liệu, cú pháp cơ bản của JavaScript DOM và sự kiện trong JavaScriptAJAX và JSON trong JavaScript Thư viện và framework JavaScript",
     bonus:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non",
+      "Khóa học JavaScript cơ bản sẽ hướng dẫn các bạn về một số kiến thức: Các kiểu dữ liệu, cú pháp cơ bản của JavaScript DOM và sự kiện trong JavaScriptAJAX và JSON trong JavaScript Thư viện và framework JavaScript",
     link: "https://www.youtube.com/watch?v=1HakS7KsbCk",
   },
 ];
