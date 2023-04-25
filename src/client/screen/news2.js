@@ -40,25 +40,22 @@ function NEW2() {
   useEffect(() => {
     const getNewData = async () => {
       await axios
-        .get("http://localhost:8080/api/news", {
+        .get("https://large-waves-production.up.railway.app/home/news", {
           headers: {
             Authorization: "Bearer " + token,
           },
         })
         .then((res) => {
-          setDataNews(res.data.list);
+          setDataNews(res.data);
         });
     };
     getNewData();
   }, []);
-
+  // console.log(datanews);
   datanews.reverse();
 
   return (
     <div>
-      <div style={{ display: "none" }}>
-        <NewsFit />
-      </div>
       <div className="container-new2">
         <div className="header-new-top">
           <h1 className="new2-title">HOẠT ĐỘNG</h1>

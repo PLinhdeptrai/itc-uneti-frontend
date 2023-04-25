@@ -13,49 +13,49 @@ function Cour() {
     const demoCourse = [
       {
         id: 1,
-        img: Oop,
-        nameCourse: "Lap Trinh Huong Doi Tuong",
-        teacher: "Pham Thuy",
+        img: "https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/339069672_217346600880233_7795457486063575512_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=chur320WHiUAX9iOYwo&_nc_ht=scontent.fhan2-5.fna&oh=00_AfClIlckCXczeeaOF3hYrJFLMR5dBTs1jNPDZ_X4or6BGw&oe=644B6514",
+        nameCourse: "Lập trình JAVA",
+        teacher: "Hà Đăng Huy",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       },
       {
         id: 2,
         img: Web,
-        nameCourse: "Lap Trinh Web",
-        teacher: "Hai Long",
+        nameCourse: "Lập Trình Web",
+        teacher: "Hải Long",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       },
       {
         id: 3,
-        img: Python,
-        nameCourse: "Lap trinh voi Python",
-        teacher: "Nguyen Van A",
+        img: "https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-6/334254786_249581654064201_6062261129525930721_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=QgIzvqFavIsAX9gyxKo&_nc_ht=scontent.fhan2-3.fna&oh=00_AfBkfkJIPaCs3CuG3xu8TIfkhEHyZi-d0XVmhAsLXJk_3g&oe=644BAA1C",
+        nameCourse: "Đồ họa ITC",
+        teacher: "Phùng Trần Trung Nghĩa",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       },
       {
         id: 4,
         img: Python,
-        nameCourse: "Lap trinh voi Python",
-        teacher: "Nguyen Van A",
+        nameCourse: "Lập trình với python",
+        teacher: "Nguyễn Văn An",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       },
       {
         id: 5,
         img: Oop,
-        nameCourse: "Lap Trinh Huong Doi Tuong",
-        teacher: "Pham Thuy",
+        nameCourse: "Lập trình hướng đối tượng",
+        teacher: "Vũ Thành Đạt",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       },
       {
         id: 6,
-        img: Web,
-        nameCourse: "Lap Trinh Web",
-        teacher: "Hai Long",
+        img: "https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/315976912_518832606949104_8416891162987609159_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=730e14&_nc_ohc=JC5f6tKWZM4AX8t7u4m&_nc_ht=scontent.fhan2-5.fna&oh=00_AfD18-95FgNA_kdWMxDPzKdIgJ_kEgt4bt9EE9n1PyZBBA&oe=644C7C4D",
+        nameCourse: "Quản trị mạng",
+        teacher: "Hải Long",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       },

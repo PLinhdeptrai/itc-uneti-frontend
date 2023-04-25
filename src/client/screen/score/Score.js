@@ -32,7 +32,7 @@ function Example() {
   useEffect(() => {
     const getTableData = async () => {
       await axios
-        .get("http://localhost:8080/api/score/user/findAll", {
+        .get("https://large-waves-production.up.railway.app/api/score/user/findAll", {
           headers: {
             Authorization: "Bearer " + token,
           },

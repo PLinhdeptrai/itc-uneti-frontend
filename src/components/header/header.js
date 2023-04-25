@@ -36,7 +36,7 @@ function HomePage() {
                 <FaHome className="nav-icon" size={40} color="#4153cc" />{" "}
                 <p>Trang chủ</p>
               </Nav.Link>
-              <Nav.Link className="header-selection" href="/link">
+              <Nav.Link className="header-selection" href="/news">
                 <FaRocket className="nav-icon" size={40} color="#4153cc" />
                 <p>Hoạt động</p>
               </Nav.Link>
@@ -52,7 +52,7 @@ function HomePage() {
                 <FaChartBar className="nav-icon" size={40} color="#4153cc" />{" "}
                 <p>Xem điểm</p>
               </Nav.Link>
-              <Nav.Link className="header-selection" href="#v">
+              <Nav.Link className="header-selection" href="#">
                 <FaQuestionCircle
                   className="nav-icon"
                   size={45}
@@ -85,7 +85,9 @@ function HomePage() {
                 <div className="header-user">
                   <div className="header-user-left">
                     <AccountCircleIcon></AccountCircleIcon>
-                    <p className="header-user-name">Xin chào {user?.username}</p>
+                    <p className="header-user-name">
+                      Xin chào {user?.username}
+                    </p>
                   </div>
                   <div className="header-user-logout">
                     <p

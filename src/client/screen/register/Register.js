@@ -28,7 +28,10 @@ function Register() {
       roles: ["user"],
     };
     const data = await axios
-      .post("http://localhost:8080/api/auth/register", newUser)
+      .post(
+        "https://large-waves-production.up.railway.app/api/auth/register",
+        newUser
+      )
       .then(function (data) {
         swal({
           title: "Đăng ký thành công",

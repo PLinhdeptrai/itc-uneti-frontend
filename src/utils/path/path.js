@@ -12,7 +12,6 @@ const path = {
     DOCUMENT: 'document/*',
     ADMIN: '/admin',
     ADMINPOST: 'post',
-    NEW2: 'new2',
     ERRORPAGE:  '*'
 }
 

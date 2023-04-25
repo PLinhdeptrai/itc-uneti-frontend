@@ -29,11 +29,15 @@ function PostAdmin() {
 
     console.log(formData);
     const data = await axios
-      .post("http://localhost:8080/api/news/create", formData, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
+      .post(
+        "https://large-waves-production.up.railway.app/api/news/create",
+        formData,
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      )
       .then(function (data) {
         swal({
           title: "Đăng bài thành công!",
@@ -44,7 +48,12 @@ function PostAdmin() {
       })
       .catch(function (error) {
         console.log(error);
-        alert("loi roi");
+        swal({
+          title: "Đăng bài không thành công!",
+          text: "",
+          icon: "error",
+          button: "OK",
+        });
       });
   };
 

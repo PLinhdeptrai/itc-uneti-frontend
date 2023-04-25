@@ -16,7 +16,6 @@ import DocumentItem from "./components/Layouts/LayoutDoc/DocumentItem";
 import Admin from "./client/screen/admin/index";
 import PostAdmin from "./client/screen/admin/post/post";
 import Authorized from "./components/Authorized";
-import NEW2 from "./client/screen/news2";
 import NotFound from "./client/screen/errorpage/errorpage";
 function App() {
   return (
